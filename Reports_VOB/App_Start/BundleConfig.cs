@@ -37,7 +37,9 @@ namespace VOB.Web
                 "~/Content/Kendo/2016.2.714/kendo.default.mobile.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/KendoJs").Include(
-                "~/Scripts/kendo/2016.2.714/kendo.all.min.js"));
+                "~/Scripts/kendo/2016.2.714/kendo.all.min.js",
+                "~/Scripts/kendo/2016.2.714/cultures/kendo.culture.es-CL.min.js",
+                "~/Scripts/kendo/2016.2.714/cultures/kendo.messages.es-CL.min.js"));
         }
     }
 }

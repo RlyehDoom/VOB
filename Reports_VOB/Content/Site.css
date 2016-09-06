@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 110px;
     padding-bottom: 20px;
 }
 
@@ -27,12 +27,9 @@ textarea {
 {
    width:100%;
    background-color: #005F98 !important;
-   position:absolute;
 }
 
 #layout-header-image
 {
-    position:absolute;
-    left:0;
-    top:0;
+
 }

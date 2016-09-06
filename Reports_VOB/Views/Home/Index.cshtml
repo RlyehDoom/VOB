@@ -4,7 +4,8 @@
 <div id="grid"></div>
 @section scripts {
 <script type="text/javascript">
-$(document).ready(function() {
+    $(document).ready(function () {
+                    kendo.culture("es-CL");
                     $("#grid").kendoGrid({
                         dataSource: {
                             type: "odata",
