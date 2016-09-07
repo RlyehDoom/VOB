@@ -27,8 +27,8 @@ namespace VOB.Web.Reportes
             IdEstado = Request.Form["IdEstado"];
             IdTipoBalance = Request.Form["IdTipoBalance"];
 
-            if (!string.IsNullOrEmpty(Rut))
-                RenderReport();
+            //if (!string.IsNullOrEmpty(Rut))
+                //RenderReport();
         }
 
         private void RenderReport()

@@ -5,6 +5,7 @@
 
 @section scripts {
     <script type="text/javascript">
+        var initialLoad = true;
         $(document).ready(function () {
             kendo.culture("es-CL");
 
@@ -32,6 +33,16 @@
                     },
                     schema: {
                         model: { id: "IdPeriodo" }
+                    },
+                    requestStart: function () {
+                        if (initialLoad)
+                            kendo.ui.progress($('#controlesBusqueda'), true);
+                    },
+                    requestEnd: function () {
+                        if (initialLoad)
+                            kendo.ui.progress($('#controlesBusqueda'), false);
+
+                        initialLoad = false;
                     }
                 },
                 noRecords: {
@@ -43,8 +54,8 @@
                 columns: [{ title:"",template: "<input type='checkbox' class='gridCheckbox' />", width:100 }
                 , {
                     field: "IdPeriodo",
-                    title: "Id Periodo",
-                    width: 120
+                    title: "Id",
+                    width: 50
                 }, {
                     field: "Periodo",
                     title: "Periodo"
@@ -63,7 +74,7 @@
                     field: "Moneda",
                     title: "Moneda"
                 }]
-            });
+            }).data("kendoGrid");
             grid.table.on("click", ".gridCheckbox", selectRow);
         }
         var checkedIds = {};
@@ -98,13 +109,14 @@
     </script>
 }
 
-@using (Html.BeginForm(null, null, new { @target = "reportFrame" }, FormMethod.Post, new { @class = "", @target = "reportFrame" }))
+@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "", @target = "reportFrame" }))
 {
-    <div id="alertaRUT" class="alert alert-info" style="display:none;">
+    <div id="alertaRUT" class="alert alert-warning" style="display:none;">
         <a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
-        <strong>Atención!</strong> Por favor ingrese un RUT valido.
+        <strong>Advertencia!</strong> Por favor ingrese un RUT valido.
     </div>
     <br />
+    <div id="controlesBusqueda">
         <div class="row">
             <div class="col-sm-6">
                 <div class="input-group">
@@ -117,7 +129,7 @@
             </div>
             <div class="col-sm-6">
             </div>
-       </div>
+        </div>
         <div id="contenedorSelPer" class="row" style="display:none;">
             <div class="col-sm-12">
                 <br />
@@ -131,5 +143,6 @@
             </div>
         </div>
         <br />
-        <iframe id="reportFrame" src="~/Reportes/ReportViewer.aspx" style="width:100%; height:200px;"></iframe>
+    </div>
+    <iframe id="reportFrame" src="~/Reportes/ReportViewer.aspx" style="width:100%; height:300px;"></iframe>
 }            
