@@ -4,26 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VOB.Web.DataBaseModel;
+using VOB.Web.Utilidades;
 
 namespace VOB.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index(Models.ReporteNormalModel model)
         {
-            ViewBag.UserName = User.Identity.Name.Substring(User.Identity.Name.IndexOf("\\") + 1);
+            ViewBag.UserName = UsuarioNT;
             return View(model);
         }
 
         public ActionResult Consolidado()
         {
-            ViewBag.UserName = User.Identity.Name.Substring(User.Identity.Name.IndexOf("\\") + 1);
+            ViewBag.UserName = UsuarioNT;
             return View();
         }
 
         public ActionResult Combinado()
         {
-            ViewBag.UserName = User.Identity.Name.Substring(User.Identity.Name.IndexOf("\\") + 1);
+            ViewBag.UserName = UsuarioNT;
             return View();
         }
 
