@@ -17,7 +17,7 @@
     <AssemblyName>VOB.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
@@ -266,6 +266,7 @@
     </Compile>
     <Compile Include="Utilidades\BaseClass.cs" />
     <Compile Include="Utilidades\SecurityClass.cs" />
+    <Compile Include="Utilidades\UtilityClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1354,6 +1355,7 @@
     <Content Include="DataBaseModel\VOB_DataBase.edmx.diagram">
       <DependentUpon>VOB_DataBase.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\localhost.pubxml" />
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <Content Include="Reportes\ReportViewer.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2521,7 +2523,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>34640</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51052/</IISUrl>
+          <IISUrl>http://localhost/VOB.Web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

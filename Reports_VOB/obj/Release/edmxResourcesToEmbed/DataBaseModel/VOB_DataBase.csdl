@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOV_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Analistas">
+    <Key>
+      <PropertyRef Name="IdAnalista" />
+    </Key>
+    <Property Name="IdAnalista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="UsuarioNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BalancePeriodo" Relationship="Self.FK_BalancePeriodo_Analistas" FromRole="Analistas" ToRole="BalancePeriodo" />
+  </EntityType>
+  <EntityType Name="BalanceDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPeriodo" Type="Int32" Nullable="false" />
+    <Property Name="IdConcepto" Type="Int32" Nullable="false" />
+    <Property Name="FechaCierre" Type="Int32" Nullable="false" />
+    <Property Name="Monto" Type="Double" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BalancePeriodo" Relationship="Self.FK_BalanceDetalle_BalancePeriodo" FromRole="BalanceDetalle" ToRole="BalancePeriodo" />
+  </EntityType>
+  <EntityType Name="BalancePeriodo">
+    <Key>
+      <PropertyRef Name="IdPeriodo" />
+    </Key>
+    <Property Name="IdPeriodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdBalance" Type="Int32" />
+    <Property Name="Periodo" Type="Int32" Nullable="false" />
+    <Property Name="Meses" Type="Byte" Nullable="false" />
+    <Property Name="CantidadEmpresas" Type="Int16" />
+    <Property Name="Clientes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdEstado" Type="Byte" Nullable="false" />
+    <Property Name="IdCalidad" Type="Byte" Nullable="false" />
+    <Property Name="IdAnalista" Type="Int32" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Analistas" Relationship="Self.FK_BalancePeriodo_Analistas" FromRole="BalancePeriodo" ToRole="Analistas" />
+    <NavigationProperty Name="BalanceDetalle" Relationship="Self.FK_BalanceDetalle_BalancePeriodo" FromRole="BalancePeriodo" ToRole="BalanceDetalle" />
+    <NavigationProperty Name="Balances" Relationship="Self.FK_BalancePeriodo_Balances" FromRole="BalancePeriodo" ToRole="Balances" />
+    <NavigationProperty Name="Estados" Relationship="Self.FK_BalancePeriodo_Estados" FromRole="BalancePeriodo" ToRole="Estados" />
+    <NavigationProperty Name="TipoCalidad" Relationship="Self.FK_BalancePeriodo_TipoCalidad" FromRole="BalancePeriodo" ToRole="TipoCalidad" />
+  </EntityType>
+  <EntityType Name="Balances">
+    <Key>
+      <PropertyRef Name="IdBalance" />
+    </Key>
+    <Property Name="IdBalance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdMoneda" Type="Byte" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="Byte" Nullable="false" />
+    <Property Name="FormatoMoneda" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ejecutivo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaModificacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BalancePeriodo" Relationship="Self.FK_BalancePeriodo_Balances" FromRole="Balances" ToRole="BalancePeriodo" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK_Balances_Clientes" FromRole="Balances" ToRole="Clientes" />
+    <NavigationProperty Name="Monedas" Relationship="Self.FK_Balances_Monedas" FromRole="Balances" ToRole="Monedas" />
+    <NavigationProperty Name="TipoBalance" Relationship="Self.FK_Balances_TipoBalance" FromRole="Balances" ToRole="TipoBalance" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdClienteBanco" Type="Int32" />
+    <Property Name="RUTCliente" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RazonSocial" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ejecutivo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Giro" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CodActivo" Type="Int32" />
+    <Property Name="Segmento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CRD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ClienteDesde" Type="DateTime" Precision="0" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Balances" Relationship="Self.FK_Balances_Clientes" FromRole="Clientes" ToRole="Balances" />
+  </EntityType>
+  <EntityType Name="Conceptos">
+    <Key>
+      <PropertyRef Name="IdConcepto" />
+      <PropertyRef Name="IdTipoBalance" />
+    </Key>
+    <Property Name="IdConcepto" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="Byte" Nullable="false" />
+    <Property Name="IdInterno" Type="Int32" />
+    <Property Name="IdTipoConcepto" Type="Byte" Nullable="false" />
+    <Property Name="IdGrupo" Type="Int16" />
+    <Property Name="Concepto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConceptoFormato" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ConceptosGrupos" Relationship="Self.FK_Conceptos_ConceptosGrupos" FromRole="Conceptos" ToRole="ConceptosGrupos" />
+    <NavigationProperty Name="TipoBalance" Relationship="Self.FK_Conceptos_TipoBalance" FromRole="Conceptos" ToRole="TipoBalance" />
+    <NavigationProperty Name="TipoConceptos" Relationship="Self.FK_Conceptos_TipoConceptos" FromRole="Conceptos" ToRole="TipoConceptos" />
+  </EntityType>
+  <EntityType Name="ConceptosGrupos">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="Int16" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="Byte" />
+    <Property Name="IdTipoGrupo" Type="Int16" />
+    <Property Name="NombreSubGrupo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Conceptos" Relationship="Self.FK_Conceptos_ConceptosGrupos" FromRole="ConceptosGrupos" ToRole="Conceptos" />
+    <NavigationProperty Name="TipoGrupos" Relationship="Self.FK_ConceptosGrupos_TipoGrupos" FromRole="ConceptosGrupos" ToRole="TipoGrupos" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="Byte" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BalancePeriodo" Relationship="Self.FK_BalancePeriodo_Estados" FromRole="Estados" ToRole="BalancePeriodo" />
+  </EntityType>
+  <EntityType Name="Monedas">
+    <Key>
+      <PropertyRef Name="IdMoneda" />
+    </Key>
+    <Property Name="IdMoneda" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Simbolo" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Balances" Relationship="Self.FK_Balances_Monedas" FromRole="Monedas" ToRole="Balances" />
+  </EntityType>
+  <EntityType Name="TipoBalance">
+    <Key>
+      <PropertyRef Name="IdTipoBalance" />
+    </Key>
+    <Property Name="IdTipoBalance" Type="Byte" Nullable="false" />
+    <Property Name="TipoBalance1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Balances" Relationship="Self.FK_Balances_TipoBalance" FromRole="TipoBalance" ToRole="Balances" />
+    <NavigationProperty Name="Conceptos" Relationship="Self.FK_Conceptos_TipoBalance" FromRole="TipoBalance" ToRole="Conceptos" />
+  </EntityType>
+  <EntityType Name="TipoCalidad">
+    <Key>
+      <PropertyRef Name="IdCalidad" />
+    </Key>
+    <Property Name="IdCalidad" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Calidad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BalancePeriodo" Relationship="Self.FK_BalancePeriodo_TipoCalidad" FromRole="TipoCalidad" ToRole="BalancePeriodo" />
+  </EntityType>
+  <EntityType Name="TipoConceptos">
+    <Key>
+      <PropertyRef Name="IdTipoConcepto" />
+    </Key>
+    <Property Name="IdTipoConcepto" Type="Byte" Nullable="false" />
+    <Property Name="TipoConcepto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Conceptos" Relationship="Self.FK_Conceptos_TipoConceptos" FromRole="TipoConceptos" ToRole="Conceptos" />
+  </EntityType>
+  <EntityType Name="TipoGrupos">
+    <Key>
+      <PropertyRef Name="IdTipoGrupo" />
+    </Key>
+    <Property Name="IdTipoGrupo" Type="Int16" Nullable="false" />
+    <Property Name="NombreTipoGrupo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ConceptosGrupos" Relationship="Self.FK_ConceptosGrupos_TipoGrupos" FromRole="TipoGrupos" ToRole="ConceptosGrupos" />
+  </EntityType>
+  <Association Name="FK_BalancePeriodo_Analistas">
+    <End Role="Analistas" Type="Self.Analistas" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Analistas">
+        <PropertyRef Name="IdAnalista" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdAnalista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalanceDetalle_BalancePeriodo">
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="1" />
+    <End Role="BalanceDetalle" Type="Self.BalanceDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BalancePeriodo">
+        <PropertyRef Name="IdPeriodo" />
+      </Principal>
+      <Dependent Role="BalanceDetalle">
+        <PropertyRef Name="IdPeriodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_Balances">
+    <End Role="Balances" Type="Self.Balances" Multiplicity="0..1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Balances">
+        <PropertyRef Name="IdBalance" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_Estados">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_TipoCalidad">
+    <End Role="TipoCalidad" Type="Self.TipoCalidad" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCalidad">
+        <PropertyRef Name="IdCalidad" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdCalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_Monedas">
+    <End Role="Monedas" Type="Self.Monedas" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedas">
+        <PropertyRef Name="IdMoneda" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_TipoBalance">
+    <End Role="TipoBalance" Type="Self.TipoBalance" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoBalance">
+        <PropertyRef Name="IdTipoBalance" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdTipoBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_ConceptosGrupos">
+    <End Role="ConceptosGrupos" Type="Self.ConceptosGrupos" Multiplicity="0..1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptosGrupos">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_TipoBalance">
+    <End Role="TipoBalance" Type="Self.TipoBalance" Multiplicity="1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoBalance">
+        <PropertyRef Name="IdTipoBalance" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdTipoBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_TipoConceptos">
+    <End Role="TipoConceptos" Type="Self.TipoConceptos" Multiplicity="1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoConceptos">
+        <PropertyRef Name="IdTipoConcepto" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdTipoConcepto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConceptosGrupos_TipoGrupos">
+    <End Role="TipoGrupos" Type="Self.TipoGrupos" Multiplicity="0..1" />
+    <End Role="ConceptosGrupos" Type="Self.ConceptosGrupos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoGrupos">
+        <PropertyRef Name="IdTipoGrupo" />
+      </Principal>
+      <Dependent Role="ConceptosGrupos">
+        <PropertyRef Name="IdTipoGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VOB_Entitites" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Analistas" EntityType="Self.Analistas" />
+    <EntitySet Name="BalanceDetalle" EntityType="Self.BalanceDetalle" />
+    <EntitySet Name="BalancePeriodo" EntityType="Self.BalancePeriodo" />
+    <EntitySet Name="Balances" EntityType="Self.Balances" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Conceptos" EntityType="Self.Conceptos" />
+    <EntitySet Name="ConceptosGrupos" EntityType="Self.ConceptosGrupos" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" />
+    <EntitySet Name="Monedas" EntityType="Self.Monedas" />
+    <EntitySet Name="TipoBalance" EntityType="Self.TipoBalance" />
+    <EntitySet Name="TipoCalidad" EntityType="Self.TipoCalidad" />
+    <EntitySet Name="TipoConceptos" EntityType="Self.TipoConceptos" />
+    <EntitySet Name="TipoGrupos" EntityType="Self.TipoGrupos" />
+    <AssociationSet Name="FK_BalancePeriodo_Analistas" Association="Self.FK_BalancePeriodo_Analistas">
+      <End Role="Analistas" EntitySet="Analistas" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalanceDetalle_BalancePeriodo" Association="Self.FK_BalanceDetalle_BalancePeriodo">
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+      <End Role="BalanceDetalle" EntitySet="BalanceDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_Balances" Association="Self.FK_BalancePeriodo_Balances">
+      <End Role="Balances" EntitySet="Balances" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_Estados" Association="Self.FK_BalancePeriodo_Estados">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_TipoCalidad" Association="Self.FK_BalancePeriodo_TipoCalidad">
+      <End Role="TipoCalidad" EntitySet="TipoCalidad" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_Clientes" Association="Self.FK_Balances_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_Monedas" Association="Self.FK_Balances_Monedas">
+      <End Role="Monedas" EntitySet="Monedas" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_TipoBalance" Association="Self.FK_Balances_TipoBalance">
+      <End Role="TipoBalance" EntitySet="TipoBalance" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_ConceptosGrupos" Association="Self.FK_Conceptos_ConceptosGrupos">
+      <End Role="ConceptosGrupos" EntitySet="ConceptosGrupos" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_TipoBalance" Association="Self.FK_Conceptos_TipoBalance">
+      <End Role="TipoBalance" EntitySet="TipoBalance" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_TipoConceptos" Association="Self.FK_Conceptos_TipoConceptos">
+      <End Role="TipoConceptos" EntitySet="TipoConceptos" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConceptosGrupos_TipoGrupos" Association="Self.FK_ConceptosGrupos_TipoGrupos">
+      <End Role="TipoGrupos" EntitySet="TipoGrupos" />
+      <End Role="ConceptosGrupos" EntitySet="ConceptosGrupos" />
+    </AssociationSet>
+    <FunctionImport Name="CalcularBalanceCombinadoPorPeriodo" ReturnType="Collection(BOV_Model.CalcularBalanceCombinadoPorPeriodo_Result)">
+      <Parameter Name="ListaRUTs" Mode="In" Type="String" />
+      <Parameter Name="ListaIdPeriodos" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarAnalista" ReturnType="Collection(Int32)">
+      <Parameter Name="IdAnalista" Mode="In" Type="Int32" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarBalance" ReturnType="Collection(Int32)">
+      <Parameter Name="IdBalance" Mode="In" Type="Int32" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="IdMoneda" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+      <Parameter Name="FormatoMoneda" Mode="In" Type="String" />
+      <Parameter Name="Ejecutivo" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarBalanceDetalle">
+      <Parameter Name="FechaHora" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarBalanceDetallePorConcepto">
+      <Parameter Name="IdConcepto" Mode="In" Type="Int32" />
+      <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+      <Parameter Name="FechaCierre" Mode="In" Type="Int32" />
+      <Parameter Name="Monto" Mode="In" Type="Double" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="FechaHora" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+      <Parameter Name="Nota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarBalanceDetalleXML">
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+      <Parameter Name="Detalles" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarBalancePeriodo" ReturnType="Collection(Int32)">
+      <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+      <Parameter Name="IdBalance" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="Int32" />
+      <Parameter Name="Meses" Mode="In" Type="Byte" />
+      <Parameter Name="CantidadEmpresas" Mode="In" Type="Int16" />
+      <Parameter Name="Clientes" Mode="In" Type="String" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="IdAnalista" Mode="In" Type="Int32" />
+      <Parameter Name="FechaBalance" Mode="In" Type="String" />
+      <Parameter Name="UltimoUsuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarCliente" ReturnType="Collection(Int32)">
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="IdClienteBanco" Mode="In" Type="Int32" />
+      <Parameter Name="RUTCliente" Mode="In" Type="String" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="RazonSocial" Mode="In" Type="String" />
+      <Parameter Name="Giro" Mode="In" Type="String" />
+      <Parameter Name="CodActivo" Mode="In" Type="Int32" />
+      <Parameter Name="Segmento" Mode="In" Type="String" />
+      <Parameter Name="CRD" Mode="In" Type="String" />
+      <Parameter Name="VE" Mode="In" Type="String" />
+      <Parameter Name="ClienteDesde" Mode="In" Type="DateTime" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertarEditarEjecutivo">
+      <Parameter Name="IdEjecutivo" Mode="In" Type="Int32" />
+      <Parameter Name="NombreCompleto" Mode="In" Type="String" />
+      <Parameter Name="UsuarioNT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerBalancesClientes" ReturnType="Collection(BOV_Model.ObtenerBalancesClientes_Result)">
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="RUTCliente" Mode="In" Type="String" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerBalancesCombinadosPorPeriodo" ReturnType="Collection(BOV_Model.ObtenerBalancesCombinadosPorPeriodo_Result)">
+      <Parameter Name="RUTEmpresa" Mode="In" Type="String" />
+      <Parameter Name="Periodo" Mode="In" Type="Int32" />
+      <Parameter Name="Meses" Mode="In" Type="Int16" />
+      <Parameter Name="CantidadEmpresas" Mode="In" Type="Int16" />
+      <Parameter Name="ListaRUTs" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerBalancesDetalles" ReturnType="Collection(BOV_Model.ObtenerBalancesDetalles_Result)">
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+      <Parameter Name="IdBalance" Mode="In" Type="Int32" />
+      <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstado" Mode="In" Type="Int32" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerBalancesPeriodosCliente" ReturnType="Collection(BOV_Model.ObtenerBalancesPeriodosCliente_Result)">
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="RUTCliente" Mode="In" Type="String" />
+      <Parameter Name="IdPeriodo" Mode="In" Type="Int32" />
+      <Parameter Name="Periodo" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="Meses" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+      <Parameter Name="CantidadEmpresas" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="ObtenerPeriodosIngresados" ReturnType="Collection(BOV_Model.ObtenerPeriodosIngresados_Result)">
+      <Parameter Name="Periodo1" Mode="In" Type="String" />
+      <Parameter Name="Periodo2" Mode="In" Type="String" />
+      <Parameter Name="Periodo3" Mode="In" Type="String" />
+      <Parameter Name="Periodo4" Mode="In" Type="String" />
+      <Parameter Name="ListaRUTs" Mode="In" Type="String" />
+      <Parameter Name="CantidadMeses1" Mode="In" Type="Byte" />
+      <Parameter Name="CantidadMeses2" Mode="In" Type="Byte" />
+      <Parameter Name="CantidadMeses3" Mode="In" Type="Byte" />
+      <Parameter Name="CantidadMeses4" Mode="In" Type="Byte" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ObtieneAnalistas" ReturnType="Collection(BOV_Model.ObtieneAnalistas_Result)" />
+    <FunctionImport Name="ObtieneClientePorIdRUT" ReturnType="Collection(BOV_Model.ObtieneClientePorIdRUT_Result)">
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="RUTCliente" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtieneClientes" />
+    <FunctionImport Name="ObtieneEstadosBalance" ReturnType="Collection(BOV_Model.ObtieneEstadosBalance_Result)" />
+    <FunctionImport Name="ObtieneMonedas" ReturnType="Collection(BOV_Model.ObtieneMonedas_Result)" />
+    <FunctionImport Name="ObtieneTipoBalances" ReturnType="Collection(BOV_Model.ObtieneTipoBalances_Result)" />
+    <FunctionImport Name="ObtieneTipoCalidad" ReturnType="Collection(BOV_Model.ObtieneTipoCalidad_Result)" />
+    <FunctionImport Name="ObtieneTipoConceptos" ReturnType="Collection(BOV_Model.ObtieneTipoConceptos_Result)" />
+    <FunctionImport Name="ReporteBalanceDetalles" ReturnType="Collection(BOV_Model.ReporteBalanceDetalles_Result)">
+      <Parameter Name="RutCliente" Mode="In" Type="String" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ReporteBalanceDetallesMultiples" ReturnType="Collection(BOV_Model.ReporteBalanceDetallesMultiples_Result)">
+      <Parameter Name="RutCliente" Mode="In" Type="String" />
+      <Parameter Name="Periodo1" Mode="In" Type="String" />
+      <Parameter Name="Periodo2" Mode="In" Type="String" />
+      <Parameter Name="Periodo3" Mode="In" Type="String" />
+      <Parameter Name="Periodo4" Mode="In" Type="String" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ReporteBalanceIndividualCabecera" ReturnType="Collection(BOV_Model.ReporteBalanceIndividualCabecera_Result)">
+      <Parameter Name="RutCliente" Mode="In" Type="String" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ReporteBalanceIndividualPorPeriodoCabecera" ReturnType="Collection(BOV_Model.ReporteBalanceIndividualPorPeriodoCabecera_Result)">
+      <Parameter Name="RutCliente" Mode="In" Type="String" />
+      <Parameter Name="Periodo" Mode="In" Type="String" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="ReporteBalanceObtenerComentarios" ReturnType="Collection(BOV_Model.ReporteBalanceObtenerComentarios_Result)">
+      <Parameter Name="RutCliente" Mode="In" Type="String" />
+      <Parameter Name="Periodo1" Mode="In" Type="String" />
+      <Parameter Name="Periodo2" Mode="In" Type="String" />
+      <Parameter Name="Periodo3" Mode="In" Type="String" />
+      <Parameter Name="Periodo4" Mode="In" Type="String" />
+      <Parameter Name="IdCalidad" Mode="In" Type="Byte" />
+      <Parameter Name="IdEstado" Mode="In" Type="Byte" />
+      <Parameter Name="IdTipoBalance" Mode="In" Type="Byte" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CalcularBalanceCombinadoPorPeriodo_Result">
+    <Property Type="Int32" Name="IdConcepto" Nullable="false" />
+    <Property Type="Byte" Name="IdTipoConcepto" Nullable="false" />
+    <Property Type="Int32" Name="Periodo" Nullable="false" />
+    <Property Type="Double" Name="Monto" Nullable="true" />
+    <Property Type="Int32" Name="IdEstado" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="9" />
+  </ComplexType>
+  <ComplexType Name="ObtenerBalancesClientes_Result">
+    <Property Type="Int32" Name="IdBalance" Nullable="false" />
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="false" />
+    <Property Type="String" Name="TipoBalance" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="IdMoneda" Nullable="true" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FormatoMoneda" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ejecutivo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="ObtenerBalancesCombinadosPorPeriodo_Result">
+    <Property Type="Int32" Name="IdBalance" Nullable="true" />
+    <Property Type="Int32" Name="IdPeriodo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ObtenerBalancesDetalles_Result">
+    <Property Type="Int32" Name="IdConcepto" Nullable="false" />
+    <Property Type="String" Name="Concepto" Nullable="false" MaxLength="250" />
+    <Property Type="Double" Name="Monto" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="FechaCierre" Nullable="false" />
+    <Property Type="Byte" Name="IdTipoConcepto" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ObtenerBalancesPeriodosCliente_Result">
+    <Property Type="Int32" Name="IdBalance" Nullable="false" />
+    <Property Type="Int32" Name="IdPeriodo" Nullable="true" />
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="false" />
+    <Property Type="String" Name="TipoBalance" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Periodo" Nullable="true" />
+    <Property Type="Byte" Name="Meses" Nullable="true" />
+    <Property Type="Int16" Name="CantidadEmpresas" Nullable="true" />
+    <Property Type="String" Name="Clientes" Nullable="true" MaxLength="100" />
+    <Property Type="Byte" Name="IdEstado" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="IdCalidad" Nullable="true" />
+    <Property Type="String" Name="Calidad" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="IdMoneda" Nullable="true" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FormatoMoneda" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ejecutivo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdAnalista" Nullable="true" />
+    <Property Type="String" Name="NombreAnalista" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UltimoUsuario" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ObtenerPeriodosIngresados_Result">
+    <Property Type="String" Name="RUT" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="IdPeriodo1" Nullable="true" />
+    <Property Type="Int32" Name="IdPeriodo2" Nullable="true" />
+    <Property Type="Int32" Name="IdPeriodo3" Nullable="true" />
+    <Property Type="Int32" Name="IdPeriodo4" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ObtieneAnalistas_Result">
+    <Property Type="Int32" Name="IdAnalista" Nullable="false" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="UsuarioNT" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ObtieneClientePorIdRUT_Result">
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="String" Name="RUTCliente" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Giro" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CodActivo" Nullable="true" />
+    <Property Type="String" Name="Segmento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CRD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VE" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ClienteDesde" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="IdBalance" Nullable="true" />
+    <Property Type="String" Name="FormatoMoneda" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="IdMoneda" Nullable="true" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Simbolo" Nullable="true" MaxLength="4" />
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ObtieneEstadosBalance_Result">
+    <Property Type="Byte" Name="IdEstado" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ObtieneMonedas_Result">
+    <Property Type="Byte" Name="IdMoneda" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Simbolo" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="ObtieneTipoBalances_Result">
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="false" />
+    <Property Type="String" Name="TipoBalance" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ObtieneTipoCalidad_Result">
+    <Property Type="Byte" Name="IdCalidad" Nullable="false" />
+    <Property Type="String" Name="Calidad" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ObtieneTipoConceptos_Result">
+    <Property Type="Byte" Name="IdTipoConcepto" Nullable="false" />
+    <Property Type="String" Name="TipoConcepto" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="ReporteBalanceDetalles_Result">
+    <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+    <Property Type="Int32" Name="IdConcepto" Nullable="false" />
+    <Property Type="String" Name="Concepto" Nullable="false" MaxLength="250" />
+    <Property Type="Int16" Name="IdGrupo" Nullable="false" />
+    <Property Type="String" Name="NombreSubGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="IdTipoGrupo" Nullable="false" />
+    <Property Type="String" Name="NombreTipoGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="FechaCierre" Nullable="false" />
+    <Property Type="Double" Name="Monto" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="ReporteBalanceDetallesMultiples_Result">
+    <Property Type="Int32" Name="IDConcepto" Nullable="true" />
+    <Property Type="Int32" Name="IdInterno" Nullable="true" />
+    <Property Type="String" Name="Concepto" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ConceptoFormato" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="IdGrupo" Nullable="true" />
+    <Property Type="String" Name="NombreSubGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="IdTipoGrupo" Nullable="true" />
+    <Property Type="String" Name="NombreTipoGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Periodo1" Nullable="true" />
+    <Property Type="Double" Name="Monto1" Nullable="true" />
+    <Property Type="String" Name="Descripcion1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario1" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="Periodo2" Nullable="true" />
+    <Property Type="Double" Name="Monto2" Nullable="true" />
+    <Property Type="String" Name="Descripcion2" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario2" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="Periodo3" Nullable="true" />
+    <Property Type="Double" Name="Monto3" Nullable="true" />
+    <Property Type="String" Name="Descripcion3" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario3" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="Periodo4" Nullable="true" />
+    <Property Type="Double" Name="Monto4" Nullable="true" />
+    <Property Type="String" Name="Descripcion4" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario4" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="ReporteBalanceIndividualCabecera_Result">
+    <Property Type="Int32" Name="IdBalance" Nullable="false" />
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="String" Name="RUTCliente" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NombreCompleto" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="RazonSocial" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Ejecutivo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Giro" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CodActivo" Nullable="true" />
+    <Property Type="String" Name="Segmento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CRD" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VE" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="IdMoneda" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Simbolo" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="FormatoMoneda" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="false" />
+    <Property Type="String" Name="TipoBalance" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ClienteDesde" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="ReporteBalanceIndividualPorPeriodoCabecera_Result">
+    <Property Type="Int32" Name="IdPeriodo" Nullable="false" />
+    <Property Type="Int32" Name="IdBalance" Nullable="true" />
+    <Property Type="Int32" Name="IdCliente" Nullable="false" />
+    <Property Type="Byte" Name="IdTipoBalance" Nullable="false" />
+    <Property Type="String" Name="TipoBalance" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Periodo" Nullable="false" />
+    <Property Type="Byte" Name="Meses" Nullable="false" />
+    <Property Type="Byte" Name="IdEstado" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="IdCalidad" Nullable="false" />
+    <Property Type="String" Name="Calidad" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="IdMoneda" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FormatoMoneda" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ejecutivo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="IdAnalista" Nullable="false" />
+    <Property Type="String" Name="NombreAnalista" Nullable="true" MaxLength="250" />
+    <Property Type="Int16" Name="CantidadEmpresas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ReporteBalanceObtenerComentarios_Result">
+    <Property Type="Int32" Name="IDConcepto" Nullable="true" />
+    <Property Type="Int32" Name="IdInterno" Nullable="true" />
+    <Property Type="String" Name="Concepto" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ConceptoFormato" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="IdGrupo" Nullable="true" />
+    <Property Type="String" Name="NombreSubGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="IdTipoGrupo" Nullable="true" />
+    <Property Type="String" Name="NombreTipoGrupo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Periodo" Nullable="true" />
+    <Property Type="Double" Name="Monto" Nullable="true" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comentario" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+</Schema>

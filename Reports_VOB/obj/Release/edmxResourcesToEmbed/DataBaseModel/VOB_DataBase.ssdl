@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOV_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Analistas">
+    <Key>
+      <PropertyRef Name="IdAnalista" />
+    </Key>
+    <Property Name="IdAnalista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreCompleto" Type="nvarchar" MaxLength="250" />
+    <Property Name="UsuarioNT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BalanceDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPeriodo" Type="int" Nullable="false" />
+    <Property Name="IdConcepto" Type="int" Nullable="false" />
+    <Property Name="FechaCierre" Type="int" Nullable="false" />
+    <Property Name="Monto" Type="float" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="FechaCreacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="Comentario" Type="text" />
+    <Property Name="UltimoUsuario" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BalancePeriodo">
+    <Key>
+      <PropertyRef Name="IdPeriodo" />
+    </Key>
+    <Property Name="IdPeriodo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdBalance" Type="int" />
+    <Property Name="Periodo" Type="int" Nullable="false" />
+    <Property Name="Meses" Type="tinyint" Nullable="false" />
+    <Property Name="CantidadEmpresas" Type="smallint" />
+    <Property Name="Clientes" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdEstado" Type="tinyint" Nullable="false" />
+    <Property Name="IdCalidad" Type="tinyint" Nullable="false" />
+    <Property Name="IdAnalista" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="UltimoUsuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Balances">
+    <Key>
+      <PropertyRef Name="IdBalance" />
+    </Key>
+    <Property Name="IdBalance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdMoneda" Type="tinyint" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="tinyint" Nullable="false" />
+    <Property Name="FormatoMoneda" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ejecutivo" Type="nvarchar" MaxLength="100" />
+    <Property Name="FechaCreacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="UltimoUsuario" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdClienteBanco" Type="int" />
+    <Property Name="RUTCliente" Type="nvarchar" MaxLength="10" />
+    <Property Name="NombreCompleto" Type="nvarchar" MaxLength="250" />
+    <Property Name="RazonSocial" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ejecutivo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Giro" Type="nvarchar" MaxLength="250" />
+    <Property Name="CodActivo" Type="int" />
+    <Property Name="Segmento" Type="nvarchar" MaxLength="50" />
+    <Property Name="CRD" Type="nvarchar" MaxLength="50" />
+    <Property Name="VE" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClienteDesde" Type="smalldatetime" />
+    <Property Name="UltimoUsuario" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Conceptos">
+    <Key>
+      <PropertyRef Name="IdConcepto" />
+      <PropertyRef Name="IdTipoBalance" />
+    </Key>
+    <Property Name="IdConcepto" Type="int" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="tinyint" Nullable="false" />
+    <Property Name="IdInterno" Type="int" />
+    <Property Name="IdTipoConcepto" Type="tinyint" Nullable="false" />
+    <Property Name="IdGrupo" Type="smallint" />
+    <Property Name="Concepto" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ConceptoFormato" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ConceptosGrupos">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="smallint" Nullable="false" />
+    <Property Name="IdTipoBalance" Type="tinyint" />
+    <Property Name="IdTipoGrupo" Type="smallint" />
+    <Property Name="NombreSubGrupo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="tinyint" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Monedas">
+    <Key>
+      <PropertyRef Name="IdMoneda" />
+    </Key>
+    <Property Name="IdMoneda" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Moneda" Type="nvarchar" MaxLength="50" />
+    <Property Name="Simbolo" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="TipoBalance">
+    <Key>
+      <PropertyRef Name="IdTipoBalance" />
+    </Key>
+    <Property Name="IdTipoBalance" Type="tinyint" Nullable="false" />
+    <Property Name="TipoBalance" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoCalidad">
+    <Key>
+      <PropertyRef Name="IdCalidad" />
+    </Key>
+    <Property Name="IdCalidad" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Calidad" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoConceptos">
+    <Key>
+      <PropertyRef Name="IdTipoConcepto" />
+    </Key>
+    <Property Name="IdTipoConcepto" Type="tinyint" Nullable="false" />
+    <Property Name="TipoConcepto" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoGrupos">
+    <Key>
+      <PropertyRef Name="IdTipoGrupo" />
+    </Key>
+    <Property Name="IdTipoGrupo" Type="smallint" Nullable="false" />
+    <Property Name="NombreTipoGrupo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_BalanceDetalle_BalancePeriodo">
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="1" />
+    <End Role="BalanceDetalle" Type="Self.BalanceDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BalancePeriodo">
+        <PropertyRef Name="IdPeriodo" />
+      </Principal>
+      <Dependent Role="BalanceDetalle">
+        <PropertyRef Name="IdPeriodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_Analistas">
+    <End Role="Analistas" Type="Self.Analistas" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Analistas">
+        <PropertyRef Name="IdAnalista" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdAnalista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_Balances">
+    <End Role="Balances" Type="Self.Balances" Multiplicity="0..1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Balances">
+        <PropertyRef Name="IdBalance" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_Estados">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancePeriodo_TipoCalidad">
+    <End Role="TipoCalidad" Type="Self.TipoCalidad" Multiplicity="1" />
+    <End Role="BalancePeriodo" Type="Self.BalancePeriodo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCalidad">
+        <PropertyRef Name="IdCalidad" />
+      </Principal>
+      <Dependent Role="BalancePeriodo">
+        <PropertyRef Name="IdCalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_Monedas">
+    <End Role="Monedas" Type="Self.Monedas" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedas">
+        <PropertyRef Name="IdMoneda" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Balances_TipoBalance">
+    <End Role="TipoBalance" Type="Self.TipoBalance" Multiplicity="1" />
+    <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoBalance">
+        <PropertyRef Name="IdTipoBalance" />
+      </Principal>
+      <Dependent Role="Balances">
+        <PropertyRef Name="IdTipoBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_ConceptosGrupos">
+    <End Role="ConceptosGrupos" Type="Self.ConceptosGrupos" Multiplicity="0..1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptosGrupos">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_TipoBalance">
+    <End Role="TipoBalance" Type="Self.TipoBalance" Multiplicity="1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoBalance">
+        <PropertyRef Name="IdTipoBalance" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdTipoBalance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conceptos_TipoConceptos">
+    <End Role="TipoConceptos" Type="Self.TipoConceptos" Multiplicity="1" />
+    <End Role="Conceptos" Type="Self.Conceptos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoConceptos">
+        <PropertyRef Name="IdTipoConcepto" />
+      </Principal>
+      <Dependent Role="Conceptos">
+        <PropertyRef Name="IdTipoConcepto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConceptosGrupos_TipoGrupos">
+    <End Role="TipoGrupos" Type="Self.TipoGrupos" Multiplicity="0..1" />
+    <End Role="ConceptosGrupos" Type="Self.ConceptosGrupos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoGrupos">
+        <PropertyRef Name="IdTipoGrupo" />
+      </Principal>
+      <Dependent Role="ConceptosGrupos">
+        <PropertyRef Name="IdTipoGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CalcularBalanceCombinadoPorPeriodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ListaRUTs" Type="nvarchar" Mode="In" />
+    <Parameter Name="ListaIdPeriodos" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="FormatearFechaCierre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="FechaCierre" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarAnalista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdAnalista" Type="int" Mode="In" />
+    <Parameter Name="NombreCompleto" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioNT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdBalance" Type="int" Mode="In" />
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="IdMoneda" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+    <Parameter Name="FormatoMoneda" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ejecutivo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fecha" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarBalanceDetallePorConcepto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdConcepto" Type="int" Mode="In" />
+    <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+    <Parameter Name="FechaCierre" Type="int" Mode="In" />
+    <Parameter Name="Monto" Type="float" Mode="In" />
+    <Parameter Name="Descripcion" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHora" Type="smalldatetime" Mode="In" />
+    <Parameter Name="UsuarioNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nota" Type="text" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarBalanceDetalleXML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="UsuarioNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="Detalles" Type="xml" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarBalancePeriodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+    <Parameter Name="IdBalance" Type="int" Mode="In" />
+    <Parameter Name="Periodo" Type="int" Mode="In" />
+    <Parameter Name="Meses" Type="tinyint" Mode="In" />
+    <Parameter Name="CantidadEmpresas" Type="smallint" Mode="In" />
+    <Parameter Name="Clientes" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="IdAnalista" Type="int" Mode="In" />
+    <Parameter Name="FechaBalance" Type="varchar" Mode="In" />
+    <Parameter Name="UltimoUsuario" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="IdClienteBanco" Type="int" Mode="In" />
+    <Parameter Name="RUTCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreCompleto" Type="nvarchar" Mode="In" />
+    <Parameter Name="RazonSocial" Type="nvarchar" Mode="In" />
+    <Parameter Name="Giro" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodActivo" Type="int" Mode="In" />
+    <Parameter Name="Segmento" Type="nvarchar" Mode="In" />
+    <Parameter Name="CRD" Type="nvarchar" Mode="In" />
+    <Parameter Name="VE" Type="nvarchar" Mode="In" />
+    <Parameter Name="ClienteDesde" Type="smalldatetime" Mode="In" />
+    <Parameter Name="UsuarioNT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="InsertarEditarEjecutivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdEjecutivo" Type="int" Mode="In" />
+    <Parameter Name="NombreCompleto" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsuarioNT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerBalancesClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="RUTCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ObtenerBalancesCombinadosPorPeriodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RUTEmpresa" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo" Type="int" Mode="In" />
+    <Parameter Name="Meses" Type="smallint" Mode="In" />
+    <Parameter Name="CantidadEmpresas" Type="smallint" Mode="In" />
+    <Parameter Name="ListaRUTs" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerBalancesDetalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+    <Parameter Name="IdBalance" Type="int" Mode="In" />
+    <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+    <Parameter Name="IdEstado" Type="int" Mode="In" />
+    <Parameter Name="IdCalidad" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtenerBalancesPeriodosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="RUTCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdPeriodo" Type="int" Mode="In" />
+    <Parameter Name="Periodo" Type="int" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="Meses" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+    <Parameter Name="CantidadEmpresas" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="ObtenerPeriodosIngresados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Periodo1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo4" Type="nvarchar" Mode="In" />
+    <Parameter Name="ListaRUTs" Type="nvarchar" Mode="In" />
+    <Parameter Name="CantidadMeses1" Type="tinyint" Mode="In" />
+    <Parameter Name="CantidadMeses2" Type="tinyint" Mode="In" />
+    <Parameter Name="CantidadMeses3" Type="tinyint" Mode="In" />
+    <Parameter Name="CantidadMeses4" Type="tinyint" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ObtieneAnalistas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneClientePorIdRUT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCliente" Type="int" Mode="In" />
+    <Parameter Name="RUTCliente" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ObtieneClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneEstadosBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneMonedas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneTipoBalances" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneTipoCalidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ObtieneTipoConceptos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ReporteBalanceDetalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RutCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ReporteBalanceDetallesMultiples" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RutCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo4" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ReporteBalanceIndividualCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RutCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ReporteBalanceIndividualPorPeriodoCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RutCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="ReporteBalanceObtenerComentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RutCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Periodo4" Type="nvarchar" Mode="In" />
+    <Parameter Name="IdCalidad" Type="tinyint" Mode="In" />
+    <Parameter Name="IdEstado" Type="tinyint" Mode="In" />
+    <Parameter Name="IdTipoBalance" Type="tinyint" Mode="In" />
+  </Function>
+  <EntityContainer Name="BOV_ModelStoreContainer">
+    <EntitySet Name="Analistas" EntityType="Self.Analistas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BalanceDetalle" EntityType="Self.BalanceDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BalancePeriodo" EntityType="Self.BalancePeriodo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Balances" EntityType="Self.Balances" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conceptos" EntityType="Self.Conceptos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConceptosGrupos" EntityType="Self.ConceptosGrupos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Monedas" EntityType="Self.Monedas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoBalance" EntityType="Self.TipoBalance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoCalidad" EntityType="Self.TipoCalidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoConceptos" EntityType="Self.TipoConceptos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoGrupos" EntityType="Self.TipoGrupos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BalanceDetalle_BalancePeriodo" Association="Self.FK_BalanceDetalle_BalancePeriodo">
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+      <End Role="BalanceDetalle" EntitySet="BalanceDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_Analistas" Association="Self.FK_BalancePeriodo_Analistas">
+      <End Role="Analistas" EntitySet="Analistas" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_Balances" Association="Self.FK_BalancePeriodo_Balances">
+      <End Role="Balances" EntitySet="Balances" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_Estados" Association="Self.FK_BalancePeriodo_Estados">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancePeriodo_TipoCalidad" Association="Self.FK_BalancePeriodo_TipoCalidad">
+      <End Role="TipoCalidad" EntitySet="TipoCalidad" />
+      <End Role="BalancePeriodo" EntitySet="BalancePeriodo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_Clientes" Association="Self.FK_Balances_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_Monedas" Association="Self.FK_Balances_Monedas">
+      <End Role="Monedas" EntitySet="Monedas" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Balances_TipoBalance" Association="Self.FK_Balances_TipoBalance">
+      <End Role="TipoBalance" EntitySet="TipoBalance" />
+      <End Role="Balances" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_ConceptosGrupos" Association="Self.FK_Conceptos_ConceptosGrupos">
+      <End Role="ConceptosGrupos" EntitySet="ConceptosGrupos" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_TipoBalance" Association="Self.FK_Conceptos_TipoBalance">
+      <End Role="TipoBalance" EntitySet="TipoBalance" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conceptos_TipoConceptos" Association="Self.FK_Conceptos_TipoConceptos">
+      <End Role="TipoConceptos" EntitySet="TipoConceptos" />
+      <End Role="Conceptos" EntitySet="Conceptos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConceptosGrupos_TipoGrupos" Association="Self.FK_ConceptosGrupos_TipoGrupos">
+      <End Role="TipoGrupos" EntitySet="TipoGrupos" />
+      <End Role="ConceptosGrupos" EntitySet="ConceptosGrupos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

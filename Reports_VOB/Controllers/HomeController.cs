@@ -45,7 +45,7 @@ namespace VOB.Web.Controllers
                 resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
             }
 
-            if (resultado.Count == 0)
+            if (resultado.Count == 0 && ConfigHelper.ObtenerBoleanoKey("IsDummyData") == true)
             {
                 resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
                 resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 1, Periodo = 3112013, Moneda = "Pesos", Estado="Terminado", Calidad="FECU", Meses= 12 });
