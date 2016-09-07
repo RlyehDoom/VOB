@@ -1,55 +1,74 @@
-﻿@{
+﻿@model VOB.Web.Models.ReporteNormalModel
+@{
     ViewBag.Title = "Banco Internacional - Reporte Financiero Individual";
 }
-<div id="grid"></div>
+
 @section scripts {
     <script type="text/javascript">
-    $(document).ready(function () {
-                    kendo.culture("es-CL");
-                    $("#grid").kendoGrid({
-                        dataSource: {
-                            type: "odata",
-                            transport: {
-                                read: "//demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"
-                            },
-                            schema: {
-                                model: {
-                                    fields: {
-                                        OrderID: { type: "number" },
-                                        Freight: { type: "number" },
-                                        ShipName: { type: "string" },
-                                        OrderDate: { type: "date" },
-                                        ShipCity: { type: "string" }
-                                    }
-                                }
-                            },
-                            pageSize: 20,
-                            serverPaging: true,
-                            serverFiltering: true,
-                            serverSorting: true
-                        },
-                        height: 550,
-                        filterable: true,
-                        sortable: true,
-                        pageable: true,
-                        columns: [{
-                                field:"OrderID",
-                                filterable: false
-                            },
-                            "Freight",
-                            {
-                                field: "OrderDate",
-                                title: "Order Date",
-                                format: "{0:MM/dd/yyyy}"
-                            }, {
-                                field: "ShipName",
-                                title: "Ship Name"
-                            }, {
-                                field: "ShipCity",
-                                title: "Ship City"
+        $(document).ready(function () {
+            kendo.culture("es-CL");
+
+        });
+
+        function BuscarDatosCliente() {
+            $('#contenedorSelPer').show("slow", function () {
+                CargarPeriodos();
+            });
+        }
+        function CargarPeriodos() {
+            for (i = 1; i < 5; i++) {
+                var periodo = "#Periodo" + i;
+                $(periodo).kendoDropDownList({
+                    dataTextField: "PeriodoFormateado",
+                    dataValueField: "PeriodoFormateado",
+                    dataSource: {
+                        transport: {
+                            read: {
+                                dataType: "json",
+                                url: '@Url.Action("ObtieneBalancesCliente", "Home")',
                             }
-                        ]
-                    });
+                        }
+                    },
+                    index: i-1
                 });
+            }
+        }
     </script>
+}
+
+@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "", @target = "reportFrame" }))
+{
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    @Html.TextBoxFor(m => m.Rut, new { @class = "form-control medium-size", @placeholder = Html.DisplayNameFor(m=>m.Rut) })
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" onclick="BuscarDatosCliente()">Buscar</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="contenedorSelPer" class="row" style="display:none; margin-top:10px;">
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.Periodo1)
+                @Html.TextBoxFor(m => m.Periodo1, new { })
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.Periodo2)
+                @Html.TextBoxFor(m => m.Periodo2, new { })
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.Periodo3)
+                @Html.TextBoxFor(m => m.Periodo3, new { })
+            </div>
+            <div class="col-sm-3">
+                @Html.LabelFor(m => m.Periodo4)
+                @Html.TextBoxFor(m => m.Periodo4, new { })
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Do It!" />
+        <br />
+        <iframe id="reportFrame" src="~/Reportes/ReportViewer.aspx" style="width:100%; height:1200px;"></iframe>
 }

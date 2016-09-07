@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Web;
+
+namespace VOB.Web.Models
+{
+    public class ReporteNormalModel
+    {
+        [DisplayName("RUT")]
+        public string Rut { get; set; }
+
+        [DisplayName("Periodo 1")]
+        public string Periodo1 { get; set; }
+
+        [DisplayName("Periodo 2")]
+        public string Periodo2 { get; set; }
+
+        [DisplayName("Periodo 3")]
+        public string Periodo3 { get; set; }
+
+        [DisplayName("Periodo 4")]
+        public string Periodo4 { get; set; }
+
+        [DisplayName("Id Calidad")]
+        public int IdCalidad { get; set; }
+
+        [DisplayName("Id Estado")]
+        public int IdEstado { get; set; }
+
+        [DisplayName("Id Tipo Balance")]
+        public int IdTipoBalance { get; set; }
+
+        [DisplayName("Usuario")]
+        public string UsuarioNT { get; set; }
+    }
+}

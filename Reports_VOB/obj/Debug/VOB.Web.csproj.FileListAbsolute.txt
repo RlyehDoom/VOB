@@ -108,6 +108,6 @@ C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\bin\pt\Microsoft.SqlServer.Types.reso
 C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\bin\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\obj\Debug\VOB.Web.csprojResolveAssemblyReference.cache
 C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\obj\Debug\VOB.Web.dll
 C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\obj\Debug\VOB.Web.pdb
+C:\Users\RlyehDoom\Desktop\VOB\Reports_VOB\obj\Debug\VOB.Web.csprojResolveAssemblyReference.cache

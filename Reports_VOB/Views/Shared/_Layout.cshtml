@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
@@ -18,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Estados Financieros - Reportes: ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Estados Financieros: ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -26,14 +27,14 @@
                     <li>@Html.ActionLink("Consolidado", "Consolidado", "Home")</li>
                     <li>@Html.ActionLink("Combinado", "Combinado", "Home")</li>
                 </ul>
-                <p class="nav navbar-text navbar-right">Bienvenido, @User.Identity.Name!</p>
+                <p class="nav navbar-text navbar-right">Bienvenido, @ViewBag.UserName!</p>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="footer">
             <p>&copy; @DateTime.Now.Year - @ViewBag.Title</p>
         </footer>
     </div>

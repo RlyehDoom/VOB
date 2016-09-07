@@ -1,5 +1,6 @@
 ﻿body {
-    padding-top: 115px;
+    margin-top:110px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -32,4 +33,9 @@ textarea {
 #layout-header-image
 {
     margin-top:10px;
+}
+
+.medium-size
+{
+    width:150px;
 }
