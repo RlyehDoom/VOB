@@ -8,7 +8,6 @@
         var initialLoad = true;
         $(document).ready(function () {
             kendo.culture("es-CL");
-
         });
 
         function BuscarDatosCliente() {
@@ -109,7 +108,7 @@
     </script>
 }
 
-@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "", @target = "reportFrame" }))
+@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = ""}))
 {
     <div id="alertaRUT" class="alert alert-warning" style="display:none;">
         <a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
