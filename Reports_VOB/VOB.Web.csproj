@@ -49,6 +49,10 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -77,7 +81,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +144,114 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataBaseModel\Analistas.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\BalanceDetalle.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\BalancePeriodo.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\Balances.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\CalcularBalanceCombinadoPorPeriodo_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\Clientes.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\Conceptos.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ConceptosGrupos.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\Estados.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\Monedas.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtenerBalancesClientes_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtenerBalancesCombinadosPorPeriodo_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtenerBalancesDetalles_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtenerBalancesPeriodosCliente_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtenerPeriodosIngresados_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneAnalistas_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneClientePorIdRUT_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneEstadosBalance_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneMonedas_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneTipoBalances_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneTipoCalidad_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ObtieneTipoConceptos_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ReporteBalanceDetallesMultiples_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ReporteBalanceDetalles_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ReporteBalanceIndividualCabecera_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ReporteBalanceIndividualPorPeriodoCabecera_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\ReporteBalanceObtenerComentarios_Result.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\TipoBalance.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\TipoCalidad.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\TipoConceptos.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\TipoGrupos.cs">
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\VOB_DataBase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOB_DataBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\VOB_DataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOB_DataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseModel\VOB_DataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOB_DataBase.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -789,6 +904,16 @@
     <Content Include="Content\kendo\2016.2.714\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2016.2.714\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2016.2.714\Uniform\sprite_kpi_2x.png" />
+    <Content Include="DataBaseModel\VOB_DataBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VOB_DataBase.edmx</DependentUpon>
+      <LastGenOutput>VOB_DataBase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBaseModel\VOB_DataBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VOB_DataBase.edmx</DependentUpon>
+      <LastGenOutput>VOB_DataBase.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1220,6 +1345,13 @@
     <Content Include="Content\kendo\2016.2.714-source\mobile\android\actionsheet.less" />
     <Content Include="Content\kendo\2016.2.714-source\common\transitions.less" />
     <Content Include="Reportes\BalancesRenovado.rdl" />
+    <EntityDeploy Include="DataBaseModel\VOB_DataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VOB_DataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataBaseModel\VOB_DataBase.edmx.diagram">
+      <DependentUpon>VOB_DataBase.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <Content Include="Reportes\ReportViewer.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2365,6 +2497,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.12.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

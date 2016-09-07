@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="718aafb96ebe47d881da5936e176aacd" Name="Diagram1">
+        <EntityTypeShape EntityType="BOV_Model.Analistas" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.BalanceDetalle" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.BalancePeriodo" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.Balances" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.Conceptos" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.ConceptosGrupos" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.Estados" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.Monedas" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.TipoBalance" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.TipoCalidad" Width="1.5" PointX="6" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.TipoConceptos" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOV_Model.TipoGrupos" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
+        <AssociationConnector Association="BOV_Model.FK_BalancePeriodo_Analistas" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_BalanceDetalle_BalancePeriodo" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_BalancePeriodo_Balances" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_BalancePeriodo_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_BalancePeriodo_TipoCalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Balances_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Balances_Monedas" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Balances_TipoBalance" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Conceptos_ConceptosGrupos" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Conceptos_TipoBalance" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_Conceptos_TipoConceptos" ManuallyRouted="false" />
+        <AssociationConnector Association="BOV_Model.FK_ConceptosGrupos_TipoGrupos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

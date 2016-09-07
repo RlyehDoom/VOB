@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BOV_ModelStoreContainer" CdmEntityContainer="VOB_Entitites">
+    <EntitySetMapping Name="Analistas">
+      <EntityTypeMapping TypeName="BOV_Model.Analistas">
+        <MappingFragment StoreEntitySet="Analistas">
+          <ScalarProperty Name="IdAnalista" ColumnName="IdAnalista" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="UsuarioNT" ColumnName="UsuarioNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BalanceDetalle">
+      <EntityTypeMapping TypeName="BOV_Model.BalanceDetalle">
+        <MappingFragment StoreEntitySet="BalanceDetalle">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BalancePeriodo">
+      <EntityTypeMapping TypeName="BOV_Model.BalancePeriodo">
+        <MappingFragment StoreEntitySet="BalancePeriodo">
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Meses" ColumnName="Meses" />
+          <ScalarProperty Name="CantidadEmpresas" ColumnName="CantidadEmpresas" />
+          <ScalarProperty Name="Clientes" ColumnName="Clientes" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="IdCalidad" ColumnName="IdCalidad" />
+          <ScalarProperty Name="IdAnalista" ColumnName="IdAnalista" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Balances">
+      <EntityTypeMapping TypeName="BOV_Model.Balances">
+        <MappingFragment StoreEntitySet="Balances">
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="BOV_Model.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdClienteBanco" ColumnName="IdClienteBanco" />
+          <ScalarProperty Name="RUTCliente" ColumnName="RUTCliente" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+          <ScalarProperty Name="Giro" ColumnName="Giro" />
+          <ScalarProperty Name="CodActivo" ColumnName="CodActivo" />
+          <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+          <ScalarProperty Name="CRD" ColumnName="CRD" />
+          <ScalarProperty Name="VE" ColumnName="VE" />
+          <ScalarProperty Name="ClienteDesde" ColumnName="ClienteDesde" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conceptos">
+      <EntityTypeMapping TypeName="BOV_Model.Conceptos">
+        <MappingFragment StoreEntitySet="Conceptos">
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="IdInterno" ColumnName="IdInterno" />
+          <ScalarProperty Name="IdTipoConcepto" ColumnName="IdTipoConcepto" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="ConceptoFormato" ColumnName="ConceptoFormato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConceptosGrupos">
+      <EntityTypeMapping TypeName="BOV_Model.ConceptosGrupos">
+        <MappingFragment StoreEntitySet="ConceptosGrupos">
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="IdTipoGrupo" ColumnName="IdTipoGrupo" />
+          <ScalarProperty Name="NombreSubGrupo" ColumnName="NombreSubGrupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="BOV_Model.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monedas">
+      <EntityTypeMapping TypeName="BOV_Model.Monedas">
+        <MappingFragment StoreEntitySet="Monedas">
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoBalance">
+      <EntityTypeMapping TypeName="BOV_Model.TipoBalance">
+        <MappingFragment StoreEntitySet="TipoBalance">
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance1" ColumnName="TipoBalance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCalidad">
+      <EntityTypeMapping TypeName="BOV_Model.TipoCalidad">
+        <MappingFragment StoreEntitySet="TipoCalidad">
+          <ScalarProperty Name="IdCalidad" ColumnName="IdCalidad" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoConceptos">
+      <EntityTypeMapping TypeName="BOV_Model.TipoConceptos">
+        <MappingFragment StoreEntitySet="TipoConceptos">
+          <ScalarProperty Name="IdTipoConcepto" ColumnName="IdTipoConcepto" />
+          <ScalarProperty Name="TipoConcepto" ColumnName="TipoConcepto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoGrupos">
+      <EntityTypeMapping TypeName="BOV_Model.TipoGrupos">
+        <MappingFragment StoreEntitySet="TipoGrupos">
+          <ScalarProperty Name="IdTipoGrupo" ColumnName="IdTipoGrupo" />
+          <ScalarProperty Name="NombreTipoGrupo" ColumnName="NombreTipoGrupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CalcularBalanceCombinadoPorPeriodo" FunctionName="BOV_Model.Store.CalcularBalanceCombinadoPorPeriodo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.CalcularBalanceCombinadoPorPeriodo_Result">
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="IdTipoConcepto" ColumnName="IdTipoConcepto" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertarEditarAnalista" FunctionName="BOV_Model.Store.InsertarEditarAnalista" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarBalance" FunctionName="BOV_Model.Store.InsertarEditarBalance" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarBalanceDetallePorConcepto" FunctionName="BOV_Model.Store.InsertarEditarBalanceDetallePorConcepto" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarBalanceDetalleXML" FunctionName="BOV_Model.Store.InsertarEditarBalanceDetalleXML" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarBalancePeriodo" FunctionName="BOV_Model.Store.InsertarEditarBalancePeriodo" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarCliente" FunctionName="BOV_Model.Store.InsertarEditarCliente" />
+    <FunctionImportMapping FunctionImportName="InsertarEditarEjecutivo" FunctionName="BOV_Model.Store.InsertarEditarEjecutivo" />
+    <FunctionImportMapping FunctionImportName="ObtenerBalancesClientes" FunctionName="BOV_Model.Store.ObtenerBalancesClientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtenerBalancesClientes_Result">
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance" ColumnName="TipoBalance" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerBalancesCombinadosPorPeriodo" FunctionName="BOV_Model.Store.ObtenerBalancesCombinadosPorPeriodo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtenerBalancesCombinadosPorPeriodo_Result">
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerBalancesDetalles" FunctionName="BOV_Model.Store.ObtenerBalancesDetalles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtenerBalancesDetalles_Result">
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="IdTipoConcepto" ColumnName="IdTipoConcepto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerBalancesPeriodosCliente" FunctionName="BOV_Model.Store.ObtenerBalancesPeriodosCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtenerBalancesPeriodosCliente_Result">
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance" ColumnName="TipoBalance" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Meses" ColumnName="Meses" />
+          <ScalarProperty Name="CantidadEmpresas" ColumnName="CantidadEmpresas" />
+          <ScalarProperty Name="Clientes" ColumnName="Clientes" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdCalidad" ColumnName="IdCalidad" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+          <ScalarProperty Name="IdAnalista" ColumnName="IdAnalista" />
+          <ScalarProperty Name="NombreAnalista" ColumnName="NombreAnalista" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtenerPeriodosIngresados" FunctionName="BOV_Model.Store.ObtenerPeriodosIngresados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtenerPeriodosIngresados_Result">
+          <ScalarProperty Name="RUT" ColumnName="RUT" />
+          <ScalarProperty Name="IdPeriodo1" ColumnName="IdPeriodo1" />
+          <ScalarProperty Name="IdPeriodo2" ColumnName="IdPeriodo2" />
+          <ScalarProperty Name="IdPeriodo3" ColumnName="IdPeriodo3" />
+          <ScalarProperty Name="IdPeriodo4" ColumnName="IdPeriodo4" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneAnalistas" FunctionName="BOV_Model.Store.ObtieneAnalistas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneAnalistas_Result">
+          <ScalarProperty Name="IdAnalista" ColumnName="IdAnalista" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="UsuarioNT" ColumnName="UsuarioNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneClientePorIdRUT" FunctionName="BOV_Model.Store.ObtieneClientePorIdRUT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneClientePorIdRUT_Result">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="RUTCliente" ColumnName="RUTCliente" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Giro" ColumnName="Giro" />
+          <ScalarProperty Name="CodActivo" ColumnName="CodActivo" />
+          <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+          <ScalarProperty Name="CRD" ColumnName="CRD" />
+          <ScalarProperty Name="VE" ColumnName="VE" />
+          <ScalarProperty Name="ClienteDesde" ColumnName="ClienteDesde" />
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneClientes" FunctionName="BOV_Model.Store.ObtieneClientes" />
+    <FunctionImportMapping FunctionImportName="ObtieneEstadosBalance" FunctionName="BOV_Model.Store.ObtieneEstadosBalance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneEstadosBalance_Result">
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneMonedas" FunctionName="BOV_Model.Store.ObtieneMonedas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneMonedas_Result">
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneTipoBalances" FunctionName="BOV_Model.Store.ObtieneTipoBalances">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneTipoBalances_Result">
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance" ColumnName="TipoBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneTipoCalidad" FunctionName="BOV_Model.Store.ObtieneTipoCalidad">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneTipoCalidad_Result">
+          <ScalarProperty Name="IdCalidad" ColumnName="IdCalidad" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneTipoConceptos" FunctionName="BOV_Model.Store.ObtieneTipoConceptos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ObtieneTipoConceptos_Result">
+          <ScalarProperty Name="IdTipoConcepto" ColumnName="IdTipoConcepto" />
+          <ScalarProperty Name="TipoConcepto" ColumnName="TipoConcepto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReporteBalanceDetalles" FunctionName="BOV_Model.Store.ReporteBalanceDetalles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ReporteBalanceDetalles_Result">
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="NombreSubGrupo" ColumnName="NombreSubGrupo" />
+          <ScalarProperty Name="IdTipoGrupo" ColumnName="IdTipoGrupo" />
+          <ScalarProperty Name="NombreTipoGrupo" ColumnName="NombreTipoGrupo" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReporteBalanceDetallesMultiples" FunctionName="BOV_Model.Store.ReporteBalanceDetallesMultiples">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ReporteBalanceDetallesMultiples_Result">
+          <ScalarProperty Name="IDConcepto" ColumnName="IDConcepto" />
+          <ScalarProperty Name="IdInterno" ColumnName="IdInterno" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="ConceptoFormato" ColumnName="ConceptoFormato" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="NombreSubGrupo" ColumnName="NombreSubGrupo" />
+          <ScalarProperty Name="IdTipoGrupo" ColumnName="IdTipoGrupo" />
+          <ScalarProperty Name="NombreTipoGrupo" ColumnName="NombreTipoGrupo" />
+          <ScalarProperty Name="Periodo1" ColumnName="Periodo1" />
+          <ScalarProperty Name="Monto1" ColumnName="Monto1" />
+          <ScalarProperty Name="Descripcion1" ColumnName="Descripcion1" />
+          <ScalarProperty Name="Comentario1" ColumnName="Comentario1" />
+          <ScalarProperty Name="Periodo2" ColumnName="Periodo2" />
+          <ScalarProperty Name="Monto2" ColumnName="Monto2" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+          <ScalarProperty Name="Comentario2" ColumnName="Comentario2" />
+          <ScalarProperty Name="Periodo3" ColumnName="Periodo3" />
+          <ScalarProperty Name="Monto3" ColumnName="Monto3" />
+          <ScalarProperty Name="Descripcion3" ColumnName="Descripcion3" />
+          <ScalarProperty Name="Comentario3" ColumnName="Comentario3" />
+          <ScalarProperty Name="Periodo4" ColumnName="Periodo4" />
+          <ScalarProperty Name="Monto4" ColumnName="Monto4" />
+          <ScalarProperty Name="Descripcion4" ColumnName="Descripcion4" />
+          <ScalarProperty Name="Comentario4" ColumnName="Comentario4" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReporteBalanceIndividualCabecera" FunctionName="BOV_Model.Store.ReporteBalanceIndividualCabecera">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ReporteBalanceIndividualCabecera_Result">
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="RUTCliente" ColumnName="RUTCliente" />
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+          <ScalarProperty Name="Giro" ColumnName="Giro" />
+          <ScalarProperty Name="CodActivo" ColumnName="CodActivo" />
+          <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+          <ScalarProperty Name="CRD" ColumnName="CRD" />
+          <ScalarProperty Name="VE" ColumnName="VE" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="Simbolo" ColumnName="Simbolo" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance" ColumnName="TipoBalance" />
+          <ScalarProperty Name="ClienteDesde" ColumnName="ClienteDesde" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReporteBalanceIndividualPorPeriodoCabecera" FunctionName="BOV_Model.Store.ReporteBalanceIndividualPorPeriodoCabecera">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ReporteBalanceIndividualPorPeriodoCabecera_Result">
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdBalance" ColumnName="IdBalance" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdTipoBalance" ColumnName="IdTipoBalance" />
+          <ScalarProperty Name="TipoBalance" ColumnName="TipoBalance" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Meses" ColumnName="Meses" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdCalidad" ColumnName="IdCalidad" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="FormatoMoneda" ColumnName="FormatoMoneda" />
+          <ScalarProperty Name="Ejecutivo" ColumnName="Ejecutivo" />
+          <ScalarProperty Name="IdAnalista" ColumnName="IdAnalista" />
+          <ScalarProperty Name="NombreAnalista" ColumnName="NombreAnalista" />
+          <ScalarProperty Name="CantidadEmpresas" ColumnName="CantidadEmpresas" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReporteBalanceObtenerComentarios" FunctionName="BOV_Model.Store.ReporteBalanceObtenerComentarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BOV_Model.ReporteBalanceObtenerComentarios_Result">
+          <ScalarProperty Name="IDConcepto" ColumnName="IDConcepto" />
+          <ScalarProperty Name="IdInterno" ColumnName="IdInterno" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="ConceptoFormato" ColumnName="ConceptoFormato" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="NombreSubGrupo" ColumnName="NombreSubGrupo" />
+          <ScalarProperty Name="IdTipoGrupo" ColumnName="IdTipoGrupo" />
+          <ScalarProperty Name="NombreTipoGrupo" ColumnName="NombreTipoGrupo" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
