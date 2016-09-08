@@ -12,20 +12,23 @@ namespace VOB.Web.Controllers
     {
         public ActionResult Index(Models.ReporteNormalModel model)
         {
+            model.IdTipoBalance = 1;
             ViewBag.UserName = UsuarioNT;
-            return View(model);
+            return View("Index", model);
         }
 
-        public ActionResult Consolidado()
+        public ActionResult Consolidado(Models.ReporteNormalModel model)
         {
+            model.IdTipoBalance = 2;
             ViewBag.UserName = UsuarioNT;
-            return View();
+            return View("Index", model);
         }
 
-        public ActionResult Combinado()
+        public ActionResult Combinado(Models.ReporteNormalModel model)
         {
+            model.IdTipoBalance = 3;
             ViewBag.UserName = UsuarioNT;
-            return View();
+            return View("Index", model);
         }
 
         public JsonResult ObtieneBalancesCliente(string rutCliente, byte tipoBalance)
@@ -40,18 +43,19 @@ namespace VOB.Web.Controllers
                     resultado = db.ObtenerBalancesPeriodosCliente(null, rutCliente, null, null, idEstado, null, null, tipoBalance, null).ToList();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
             }
 
-            if (resultado.Count == 0 && ConfigHelper.ObtenerBoleanoKey("IsDummyData") == true)
+            if (resultado.Count == 0 && ConfigHelper.ObtenerBoleano("IsDummyData") == true)
             {
                 resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 1, Periodo = 3112013, Moneda = "Pesos", Estado="Terminado", Calidad="FECU", Meses= 12 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 2, Periodo = 3112014, Moneda = "Pesos", Estado = "Terminado", Calidad = "8 Columnas", Meses = 12 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 3, Periodo = 3112015, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 4, Periodo = 3112015, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12 });
+                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 1, Periodo = 20131231, Moneda = "Pesos", Estado = "Terminado", Calidad="FECU", Meses= 12, IdCalidad = 1, IdEstado = 2 });
+                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 2, Periodo = 20141231, Moneda = "Pesos", Estado = "Terminado", Calidad = "8 Columnas", Meses = 12, IdCalidad = 1, IdEstado = 2 });
+                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 3, Periodo = 20151231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12, IdCalidad = 1, IdEstado = 2 });
+                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 4, Periodo = 20161231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12, IdCalidad = 1, IdEstado = 2 });
+                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 5, Periodo = 20011231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 6, IdCalidad = 1, IdEstado = 2 });
             }
 
             return new JsonResult() { Data = resultado, JsonRequestBehavior = JsonRequestBehavior.AllowGet };

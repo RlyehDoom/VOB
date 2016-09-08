@@ -27,7 +27,7 @@ namespace VOB.Web.Models
         public int IdCalidad { get; set; }
 
         [DisplayName("Id Estado")]
-        public int IdEstado { get; set; }
+        public int IdEstado { get { return 2; } set { IdEstado = value; } }
 
         [DisplayName("Id Tipo Balance")]
         public int IdTipoBalance { get; set; }

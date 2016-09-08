@@ -8,7 +8,7 @@ namespace VOB.Web.Utilidades
 {
     public static class ConfigHelper
     {
-        public static bool ObtenerBoleanoKey(string key)
+        public static bool ObtenerBoleano(string key)
         {
             bool resultado;
             Boolean.TryParse(ConfigurationManager.AppSettings[key].ToString(), out resultado);
