@@ -1361,6 +1361,7 @@
     <Content Include="Reportes\ReportViewer.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\FuncionesIndex.js" />
     <Content Include="Scripts\jquery-1.12.3.js" />
     <Content Include="Scripts\jquery-1.12.3.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

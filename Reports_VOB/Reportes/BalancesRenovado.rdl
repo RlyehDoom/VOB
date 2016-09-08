@@ -147,9 +147,6 @@
           <QueryParameter Name="@Periodo">
             <Value>=Parameters!Periodo1.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
           </QueryParameter>
@@ -232,6 +229,10 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Clientes">
+          <DataField>Clientes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -245,9 +246,6 @@
           <QueryParameter Name="@Periodo">
             <Value>=Parameters!Periodo2.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
           </QueryParameter>
@@ -330,6 +328,10 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Clientes">
+          <DataField>Clientes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -343,9 +345,6 @@
           <QueryParameter Name="@Periodo">
             <Value>=Parameters!Periodo3.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
           </QueryParameter>
@@ -428,6 +427,10 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Clientes">
+          <DataField>Clientes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -441,9 +444,6 @@
           <QueryParameter Name="@Periodo">
             <Value>=Parameters!Periodo4.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
           </QueryParameter>
@@ -526,6 +526,10 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Clientes">
+          <DataField>Clientes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -547,9 +551,6 @@
           </QueryParameter>
           <QueryParameter Name="@Periodo4">
             <Value>=Parameters!Periodo4.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
@@ -679,9 +680,6 @@
           <QueryParameter Name="@Periodo4">
             <Value>=Parameters!Periodo4.Value</Value>
           </QueryParameter>
-          <QueryParameter Name="@IdCalidad">
-            <Value>=Parameters!IdCalidad.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@IdEstado">
             <Value>=Parameters!IdEstado.Value</Value>
           </QueryParameter>
@@ -740,6 +738,49 @@
         <Field Name="Comentario">
           <DataField>Comentario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DatosRutsCombinados">
+      <Query>
+        <DataSourceName>VaciadoBalances</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Per1">
+            <Value>=Parameters!IdPeriodo1.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Per2">
+            <Value>=Parameters!IdPeriodo2.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Per3">
+            <Value>=Parameters!IdPeriodo3.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Per4">
+            <Value>=Parameters!IdPeriodo4.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>ObtenerRutsPeriodosCombinados</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="RUT">
+          <DataField>RUT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Periodo1">
+          <DataField>Periodo1</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Periodo2">
+          <DataField>Periodo2</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Periodo3">
+          <DataField>Periodo3</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Periodo4">
+          <DataField>Periodo4</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1314,7 +1355,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosDetalles</DataSetName>
-            <Top>0.49389mm</Top>
+            <Top>13.19389mm</Top>
             <Left>1mm</Left>
             <Height>16.88933mm</Height>
             <Width>188.02032mm</Width>
@@ -1514,7 +1555,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosComentarios</DataSetName>
-            <Top>2.50085cm</Top>
+            <Top>3.13585cm</Top>
             <Left>0.1cm</Left>
             <Height>0.74518cm</Height>
             <Width>18.80203cm</Width>
@@ -1546,8 +1587,394 @@
               </RightBorder>
             </Style>
           </Tablix>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>5.5376cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.34797cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.41474cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.37255cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.11004cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.48948cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>RUTs combinados:</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.4101cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="RUT">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!RUT.Value</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RUT</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Periodo1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!Periodo1.Value = "1", "X", "")</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Periodo1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Periodo21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!Periodo2.Value = "1", "X", "")</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Periodo21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Periodo31">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!Periodo3.Value = "1", "X", "")</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Periodo31</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Periodo41">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(Fields!Periodo4.Value = "1", "X", "")</Value>
+                                  <Style>
+                                    <FontSize>6pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Periodo41</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DatosRutsCombinados</DataSetName>
+            <Top>0.19599cm</Top>
+            <Left>0.11914cm</Left>
+            <Height>0.89958cm</Height>
+            <Width>18.78289cm</Width>
+            <ZIndex>2</ZIndex>
+            <Visibility>
+              <Hidden>=IIF(Parameters!IdTipoBalance.Value = "3", False, True)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
-        <Height>32.46033mm</Height>
+        <Height>39.86866mm</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3045,7 +3472,7 @@
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>31-12-2013</Value>
+          <Value>12-12-2013</Value>
         </Values>
       </DefaultValue>
       <Prompt>Periodo 1:</Prompt>
@@ -3055,7 +3482,7 @@
       <Nullable>true</Nullable>
       <DefaultValue>
         <Values>
-          <Value>31-12-2014</Value>
+          <Value>12-12-2014</Value>
         </Values>
       </DefaultValue>
       <AllowBlank>true</AllowBlank>
@@ -3066,7 +3493,7 @@
       <Nullable>true</Nullable>
       <DefaultValue>
         <Values>
-          <Value>31-12-2015</Value>
+          <Value>12-12-2015</Value>
         </Values>
       </DefaultValue>
       <AllowBlank>true</AllowBlank>
@@ -3077,33 +3504,17 @@
       <Nullable>true</Nullable>
       <DefaultValue>
         <Values>
-          <Value>31-12-2016</Value>
+          <Value>12-12-2016</Value>
         </Values>
       </DefaultValue>
       <AllowBlank>true</AllowBlank>
       <Prompt>Periodo 4:</Prompt>
     </ReportParameter>
-    <ReportParameter Name="IdCalidad">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>2</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Calidad:</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>DatosCalidad</DataSetName>
-          <ValueField>IdCalidad</ValueField>
-          <LabelField>Calidad</LabelField>
-        </DataSetReference>
-      </ValidValues>
-    </ReportParameter>
     <ReportParameter Name="IdEstado">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>1</Value>
+          <Value>2</Value>
         </Values>
       </DefaultValue>
       <Prompt>Estado:</Prompt>
@@ -3134,8 +3545,51 @@
             <Value>2</Value>
             <Label>Consolidado</Label>
           </ParameterValue>
+          <ParameterValue>
+            <Value>3</Value>
+            <Label>Combinado</Label>
+          </ParameterValue>
         </ParameterValues>
       </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="IdPeriodo1">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>1134</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Id Periodo 1</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="IdPeriodo2">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>1135</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Id Periodo 1</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="IdPeriodo3">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>1136</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Id Periodo 3</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="IdPeriodo4">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Id Periodo 4</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>

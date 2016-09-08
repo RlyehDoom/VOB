@@ -23,9 +23,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Individual", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Consolidado", "Consolidado", "Home")</li>
-                    <li>@Html.ActionLink("Combinado", "Combinado", "Home")</li>
+                    <li>@Html.ActionLink("Individual", "Index", "Home",new { }, new { @id="lnkIndividual" })</li>
+                    <li>@Html.ActionLink("Consolidado", "Consolidado", "Home", new { }, new { @id = "lnkConsolidado" })</li>
+                    <li>@Html.ActionLink("Combinado", "Combinado", "Home", new { }, new { @id = "lnkCombinado" })</li>
                 </ul>
                 <p class="nav navbar-text navbar-right">Bienvenido, @ViewBag.UserName!</p>
             </div>
@@ -43,6 +43,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/KendoJs")
+    @Scripts.Render("~/bundles/Utilities")
     @RenderSection("scripts", required: false)
 </body>
 </html>

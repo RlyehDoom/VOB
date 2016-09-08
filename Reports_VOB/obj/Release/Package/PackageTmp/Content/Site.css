@@ -39,3 +39,8 @@ textarea {
 {
     width:150px;
 }
+
+.strongwhite {
+    color:white !important;
+    font-weight:bold;
+}

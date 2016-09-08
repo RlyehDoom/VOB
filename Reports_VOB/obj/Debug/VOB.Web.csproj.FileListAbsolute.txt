@@ -227,6 +227,5 @@ E:\GIT\VOB\Reports_VOB\bin\pt\Microsoft.SqlServer.Types.resources.dll
 E:\GIT\VOB\Reports_VOB\bin\ru\Microsoft.SqlServer.Types.resources.dll
 E:\GIT\VOB\Reports_VOB\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 E:\GIT\VOB\Reports_VOB\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-E:\GIT\VOB\Reports_VOB\obj\Debug\VOB.Web.csprojResolveAssemblyReference.cache
 E:\GIT\VOB\Reports_VOB\obj\Debug\VOB.Web.dll
 E:\GIT\VOB\Reports_VOB\obj\Debug\VOB.Web.pdb
