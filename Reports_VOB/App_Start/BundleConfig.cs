@@ -40,6 +40,8 @@ namespace VOB.Web
                 "~/Scripts/kendo/2016.2.714/kendo.all.min.js",
                 "~/Scripts/kendo/2016.2.714/cultures/kendo.culture.es-CL.min.js",
                 "~/Scripts/kendo/2016.2.714/messages/kendo.messages.es-CL.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Utilities").Include("~/Scripts/jquery.Rut.js"));
         }
     }
 }

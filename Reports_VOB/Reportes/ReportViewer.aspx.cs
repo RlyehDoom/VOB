@@ -22,6 +22,7 @@ namespace VOB.Web.Reportes
         protected void Page_Load(object sender, EventArgs e)
         {
             Rut = Request.QueryString["Rut"];
+            Rut = Rut.Replace(".", "").Replace("-", "");
             Periodo1 = Request.QueryString["Periodo1"];
             Periodo2 = Request.QueryString["Periodo2"];
             Periodo3 = Request.QueryString["Periodo3"];

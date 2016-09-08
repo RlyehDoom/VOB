@@ -32,6 +32,9 @@ namespace VOB.Web.Models
         [DisplayName("Id Tipo Balance")]
         public int IdTipoBalance { get; set; }
 
+        [DisplayName("Balance")]
+        public string TituloBalance { get; set; }
+
         [DisplayName("Usuario")]
         public string UsuarioNT { get; set; }
     }

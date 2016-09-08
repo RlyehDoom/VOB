@@ -13,6 +13,8 @@ namespace VOB.Web.Controllers
         public ActionResult Index(Models.ReporteNormalModel model)
         {
             model.IdTipoBalance = 1;
+            model.TituloBalance = "Individual";
+            ViewBag.Title = "Banco Internacional - Reporte Financiero Individual";
             ViewBag.UserName = UsuarioNT;
             return View("Index", model);
         }
@@ -20,6 +22,8 @@ namespace VOB.Web.Controllers
         public ActionResult Consolidado(Models.ReporteNormalModel model)
         {
             model.IdTipoBalance = 2;
+            model.TituloBalance = "Consolidado";
+            ViewBag.Title = "Banco Internacional - Reporte Financiero Consolidado";
             ViewBag.UserName = UsuarioNT;
             return View("Index", model);
         }
@@ -27,13 +31,18 @@ namespace VOB.Web.Controllers
         public ActionResult Combinado(Models.ReporteNormalModel model)
         {
             model.IdTipoBalance = 3;
+            model.TituloBalance = "Combinado";
+            ViewBag.Title = "Banco Internacional - Reporte Financiero Combinado";
             ViewBag.UserName = UsuarioNT;
             return View("Index", model);
         }
 
         public JsonResult ObtieneBalancesCliente(string rutCliente, byte tipoBalance)
         {
+            rutCliente = rutCliente.Replace(".", "");
+            rutCliente = rutCliente.Replace("-", "");
             byte idEstado = 2; //Terminado
+
             List<ObtenerBalancesPeriodosCliente_Result> resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
 
             try

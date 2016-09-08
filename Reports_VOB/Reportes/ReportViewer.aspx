@@ -6,14 +6,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Reporte Financiero</title>
+    <style>
+        form { padding:0; margin:0; }
+        body { padding:0; margin:0; }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="mngr" runat="server">
         </asp:ScriptManager>
         <div>
-            <rsweb:ReportViewer ID="rptViewer" runat="server" Width="100%" Height="1200px" ZoomMode="PageWidth" ShowParameterPrompts="false"></rsweb:ReportViewer>
+            <rsweb:ReportViewer ID="rptViewer" runat="server" Width="100%" Height="2500px" ZoomMode="PageWidth" ShowParameterPrompts="false"></rsweb:ReportViewer>
         </div>
     </form>
 </body>
