@@ -2,15 +2,6 @@
 /* Registrar funciones Jquery o Javascript que NO utilizen RAZOR */
 /* ============================================================= */
 
-function MarcarReporteSeleccionado() {
-    var tipoBalance = '@Model.IdTipoBalance';
-    if (tipoBalance == "1")
-        $('#lnkIndividual').addClass('strongwhite');
-    if (tipoBalance == "2")
-        $('#lnkConsolidado').addClass('strongwhite');
-    if (tipoBalance == "3")
-        $('#lnkCombinado').addClass('strongwhite');
-}
 function BuscarDatosCliente() {
     if ($('#Rut').val() != "") {
         $('#contenedorSelPer').show("slow", function () {

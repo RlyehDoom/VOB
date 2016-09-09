@@ -230,10 +230,6 @@
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="Clientes">
-          <DataField>Clientes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="DatosPeriodo2">
@@ -328,10 +324,6 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="Clientes">
-          <DataField>Clientes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -428,10 +420,6 @@
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
-        <Field Name="Clientes">
-          <DataField>Clientes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
     </DataSet>
     <DataSet Name="DatosPeriodo4">
@@ -526,10 +514,6 @@
         <Field Name="CantidadEmpresas">
           <DataField>CantidadEmpresas</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="Clientes">
-          <DataField>Clientes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -741,7 +725,7 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="DatosRutsCombinados">
+    <DataSet Name="DatosRUTCombinados">
       <Query>
         <DataSourceName>VaciadoBalances</DataSourceName>
         <QueryParameters>
@@ -793,39 +777,51 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.76669mm</Width>
+                  <Width>5.63074mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>49.64826mm</Width>
+                  <Width>53.33122mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.62883mm</Width>
+                  <Width>8mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>21.00325mm</Width>
+                  <Width>8mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.62883mm</Width>
+                  <Width>16mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>19.51853mm</Width>
+                  <Width>8mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.62883mm</Width>
+                  <Width>8mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>19.42301mm</Width>
+                  <Width>16.38605mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>14.62883mm</Width>
+                  <Width>8mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>16.14526mm</Width>
+                  <Width>8mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>16.50843mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>8mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>8mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>16mm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>8.93368mm</Height>
+                  <Height>9.04347mm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -849,7 +845,7 @@
                           <rd:DefaultName>NombreTipoGrupo</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DimGray</Color>
                               <Style>None</Style>
                             </Border>
                             <VerticalAlign>Bottom</VerticalAlign>
@@ -859,9 +855,13 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>10</ColSpan>
+                        <ColSpan>14</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -897,19 +897,23 @@
                           <rd:DefaultName>NombreSubGrupo</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DimGray</Color>
                               <Style>None</Style>
                             </Border>
                             <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
-                            <PaddingTop>1pt</PaddingTop>
-                            <PaddingBottom>1pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>10</ColSpan>
+                        <ColSpan>14</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -935,12 +939,13 @@
                                 <TextRun>
                                   <Value>=Fields!IdInterno.Value</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
-                                    <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>IdInterno</rd:DefaultName>
@@ -949,7 +954,7 @@
                           </Visibility>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                               <Width>0.5pt</Width>
                             </Border>
@@ -973,18 +978,20 @@
                                 <TextRun>
                                   <Value>=IIF(Len(Fields!Concepto.Value) &gt; 40, Left(Fields!Concepto.Value,40) &amp; "...", Fields!Concepto.Value)</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Concepto</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                               <Width>0.5pt</Width>
                             </Border>
@@ -1006,9 +1013,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Descripcion1.Value</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1",IIF(InStr(Fields!Concepto.Value,"//")&lt;&gt;0,Fields!Descripcion1.Value,""),Fields!Descripcion1.Value)</Value>
                                   <Style>
-                                    <FontSize>4pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1020,10 +1027,64 @@
                           <rd:DefaultName>Descripcion1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value,"//")=0,IIF(Fields!Comentario1.Value &lt;&gt; "","(A" &amp; Fields!IDConcepto.Value &amp; ")" , ""),"//")</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1042,10 +1103,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Comentario1.Value &lt;&gt; "","(*A" &amp; Fields!IDConcepto.Value &amp; ")" &amp; Space(2) &amp; IIF(Round(Fields!Monto1.Value,2) = 0, "", Round(Fields!Monto1.Value,2)), IIF(Round(Fields!Monto1.Value,2) = 0, "", Round(Fields!Monto1.Value,2)))</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1", IIF(InStr(Fields!Descripcion1.Value,"EBITDA")&lt;&gt;0 OR InStr(Fields!Descripcion1.Value,"REF")&lt;&gt;0 OR (InStr(Fields!Descripcion1.Value,"%")&lt;&gt;0 AND InStr(Fields!Concepto.Value,"//")=0), Fields!Descripcion1.Value,  IIF(Round(Fields!Monto1.Value,2) = 0, "",Round(Fields!Monto1.Value,1))), IIF(Round(Fields!Monto1.Value,1) = 0, "",Round(Fields!Monto1.Value,0)))</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>=IIF(Fields!Monto1.Value &lt; 0, "Red","Black")</Color>
                                   </Style>
                                 </TextRun>
@@ -1059,10 +1121,19 @@
                           <ToolTip>=Fields!Comentario1.Value</ToolTip>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1081,9 +1152,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Descripcion2.Value</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1",IIF(InStr(Fields!Concepto.Value,"//")&lt;&gt;0,Fields!Descripcion2.Value,""),Fields!Descripcion2.Value)</Value>
                                   <Style>
-                                    <FontSize>4pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1095,10 +1166,70 @@
                           <rd:DefaultName>Descripcion2</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value,"//")=0,IIF(Fields!Comentario2.Value &lt;&gt; "","(B" &amp; Fields!IDConcepto.Value &amp; ")" , ""),"//")</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1117,10 +1248,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Comentario2.Value &lt;&gt; "","(*B" &amp; Fields!IDConcepto.Value &amp; ")" &amp; Space(2) &amp; IIF(Round(Fields!Monto2.Value,2) = 0, "", Round(Fields!Monto2.Value,2)), IIF(Round(Fields!Monto2.Value,2) = 0, "", Round(Fields!Monto2.Value,2)))</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1", IIF(InStr(Fields!Descripcion2.Value,"EBITDA")&lt;&gt;0 OR InStr(Fields!Descripcion2.Value,"REF")&lt;&gt;0 OR (InStr(Fields!Descripcion2.Value,"%")&lt;&gt;0 AND InStr(Fields!Concepto.Value,"//")=0), Fields!Descripcion2.Value,  IIF(Round(Fields!Monto2.Value,2) = 0, "",Round(Fields!Monto2.Value,1))), IIF(Round(Fields!Monto2.Value,1) = 0, "",Round(Fields!Monto2.Value,0)))</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>=IIF(Fields!Monto2.Value &lt; 0, "Red","Black")</Color>
                                   </Style>
                                 </TextRun>
@@ -1134,10 +1266,19 @@
                           <ToolTip>=Fields!Comentario2.Value</ToolTip>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1156,9 +1297,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Descripcion3.Value</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1",IIF(InStr(Fields!Concepto.Value,"//")&lt;&gt;0,Fields!Descripcion3.Value,""),Fields!Descripcion3.Value)</Value>
                                   <Style>
-                                    <FontSize>4pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1170,10 +1311,70 @@
                           <rd:DefaultName>Descripcion3</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value,"//")=0,IIF(Fields!Comentario3.Value &lt;&gt; "","(C" &amp; Fields!IDConcepto.Value &amp; ")" , ""),"//")</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1192,10 +1393,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Comentario3.Value &lt;&gt; "","(*C" &amp; Fields!IDConcepto.Value &amp; ")" &amp; Space(2) &amp; IIF(Round(Fields!Monto3.Value,2) = 0, "", Round(Fields!Monto3.Value,2)), IIF(Round(Fields!Monto3.Value,2) = 0, "", Round(Fields!Monto3.Value,2)))</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1", IIF(InStr(Fields!Descripcion3.Value,"EBITDA")&lt;&gt;0 OR InStr(Fields!Descripcion3.Value,"REF")&lt;&gt;0 OR (InStr(Fields!Descripcion3.Value,"%")&lt;&gt;0 AND InStr(Fields!Concepto.Value,"//")=0), Fields!Descripcion3.Value,  IIF(Round(Fields!Monto3.Value,2) = 0, "",Round(Fields!Monto3.Value,1))), IIF(Round(Fields!Monto3.Value,1) = 0, "",Round(Fields!Monto3.Value,0)))</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>=IIF(Fields!Monto3.Value &lt; 0, "Red","Black")</Color>
                                   </Style>
                                 </TextRun>
@@ -1209,10 +1411,19 @@
                           <ToolTip>=Fields!Comentario3.Value</ToolTip>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1231,9 +1442,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Descripcion4.Value</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1",IIF(InStr(Fields!Concepto.Value,"//")&lt;&gt;0,Fields!Descripcion4.Value,""),Fields!Descripcion4.Value)</Value>
                                   <Style>
-                                    <FontSize>4pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1245,10 +1456,70 @@
                           <rd:DefaultName>Descripcion4</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value,"//")=0,IIF(Fields!Comentario4.Value &lt;&gt; "","(c" &amp; Fields!IDConcepto.Value &amp; ")" , ""),"//")</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1267,10 +1538,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Comentario4.Value &lt;&gt; "","(*D" &amp; Fields!IDConcepto.Value &amp; ")" &amp; Space(2) &amp; IIF(Round(Fields!Monto4.Value,2) = 0, "", Round(Fields!Monto4.Value,2)), IIF(Round(Fields!Monto4.Value,2) = 0, "", Round(Fields!Monto4.Value,2)))</Value>
+                                  <Value>=IIF(Fields!IdTipoGrupo.Value="1", IIF(InStr(Fields!Descripcion4.Value,"EBITDA")&lt;&gt;0 OR InStr(Fields!Descripcion4.Value,"REF")&lt;&gt;0 OR (InStr(Fields!Descripcion4.Value,"%")&lt;&gt;0 AND InStr(Fields!Concepto.Value,"//")=0), Fields!Descripcion4.Value,  IIF(Round(Fields!Monto4.Value,2) = 0, "",Round(Fields!Monto4.Value,1))), IIF(Round(Fields!Monto4.Value,1) = 0, "",Round(Fields!Monto4.Value,0)))</Value>
                                   <Style>
-                                    <FontSize>5pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                     <FontWeight>=IIF(Fields!ConceptoFormato.Value = "N", "Bold", "Default")</FontWeight>
+                                    <Format>#,0.00;(#,0.00)</Format>
                                     <Color>=IIF(Fields!Monto4.Value &lt; 0, "Red","Black")</Color>
                                   </Style>
                                 </TextRun>
@@ -1284,10 +1556,19 @@
                           <ToolTip>=Fields!Comentario4.Value</ToolTip>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
                               <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>1pt</PaddingLeft>
                             <PaddingRight>1pt</PaddingRight>
@@ -1303,6 +1584,10 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -1355,10 +1640,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosDetalles</DataSetName>
-            <Top>13.19389mm</Top>
+            <Top>12.55889mm</Top>
             <Left>1mm</Left>
-            <Height>16.88933mm</Height>
-            <Width>188.02032mm</Width>
+            <Height>16.99912mm</Height>
+            <Width>187.85644mm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1370,7 +1655,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>11.2815cm</Width>
+                  <Width>12.8815cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1398,9 +1683,22 @@
                           <rd:DefaultName>Textbox83</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>DimGray</Color>
+                              <Style>None</Style>
+                              <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>Solid</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1437,8 +1735,9 @@
                           <rd:DefaultName>Comentario1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -1462,7 +1761,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>7.52053cm</Size>
+                    <Size>5.90414cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox84">
                         <CanGrow>true</CanGrow>
@@ -1485,9 +1784,22 @@
                         <rd:DefaultName>Textbox84</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
+                            <Color>DimGray</Color>
+                            <Style>None</Style>
+                            <Width>0.5pt</Width>
                           </Border>
+                          <TopBorder>
+                            <Style>Solid</Style>
+                          </TopBorder>
+                          <BottomBorder>
+                            <Style>Solid</Style>
+                          </BottomBorder>
+                          <LeftBorder>
+                            <Style>Solid</Style>
+                          </LeftBorder>
+                          <RightBorder>
+                            <Style>None</Style>
+                          </RightBorder>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -1513,7 +1825,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>7.52053cm</Size>
+                    <Size>5.90414cm</Size>
                     <CellContents>
                       <Textbox Name="Periodo5">
                         <CanGrow>true</CanGrow>
@@ -1535,8 +1847,9 @@
                         <rd:DefaultName>Periodo5</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>DimGray</Color>
                             <Style>Solid</Style>
+                            <Width>0.5pt</Width>
                           </Border>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
@@ -1555,10 +1868,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosComentarios</DataSetName>
-            <Top>3.13585cm</Top>
+            <Top>3.5486cm</Top>
             <Left>0.1cm</Left>
             <Height>0.74518cm</Height>
-            <Width>18.80203cm</Width>
+            <Width>18.78564cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1591,181 +1904,80 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.5376cm</Width>
+                  <Width>5.8902cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.34797cm</Width>
+                  <Width>3.18685cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.41474cm</Width>
+                  <Width>3.24269cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.37255cm</Width>
+                  <Width>3.25962cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.11004cm</Width>
+                  <Width>3.20353cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.48948cm</Height>
+                  <Height>0.6cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox40">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>RUTs combinados:</Value>
+                                  <Value>COMBINA LAS SIGUIENTES EMPRESAS</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>None</Style>
+                              <Width>0.5pt</Width>
                             </Border>
+                            <TopBorder>
+                              <Style>None</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>5</ColSpan>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox8">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox11">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.4101cm</Height>
+                  <Height>0.44914cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1776,20 +1988,22 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!RUT.Value</Value>
+                                  <Value>="RUT " &amp; Fields!RUT.Value</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>RUT</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1808,9 +2022,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Periodo1.Value = "1", "X", "")</Value>
+                                  <Value>=IIF(Fields!Periodo1.Value = True, "X","")</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1822,8 +2036,8 @@
                           <rd:DefaultName>Periodo1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1842,9 +2056,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Periodo2.Value = "1", "X", "")</Value>
+                                  <Value>=IIF(Fields!Periodo2.Value = True, "X","")</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1856,8 +2070,8 @@
                           <rd:DefaultName>Periodo21</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1876,9 +2090,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Periodo3.Value = "1", "X", "")</Value>
+                                  <Value>=IIF(Fields!Periodo3.Value = True, "X","")</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1890,8 +2104,8 @@
                           <rd:DefaultName>Periodo31</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1910,9 +2124,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!Periodo4.Value = "1", "X", "")</Value>
+                                  <Value>=IIF(Fields!Periodo4.Value = True, "X","")</Value>
                                   <Style>
-                                    <FontSize>6pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1924,8 +2138,8 @@
                           <rd:DefaultName>Periodo41</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
                               <Style>Solid</Style>
+                              <Width>0.5pt</Width>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1955,17 +2169,20 @@
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Details" />
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DatosRutsCombinados</DataSetName>
-            <Top>0.19599cm</Top>
+            <DataSetName>DatosRUTCombinados</DataSetName>
+            <Top>0.09525cm</Top>
             <Left>0.11914cm</Left>
-            <Height>0.89958cm</Height>
-            <Width>18.78289cm</Width>
+            <Height>1.04914cm</Height>
+            <Width>18.7829cm</Width>
             <ZIndex>2</ZIndex>
             <Visibility>
-              <Hidden>=IIF(Parameters!IdTipoBalance.Value = "3", False, True)</Hidden>
+              <Hidden>=IIF(Parameters!IdTipoBalance.Value="3",False,True)</Hidden>
             </Visibility>
             <Style>
               <Border>
@@ -1974,17 +2191,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>39.86866mm</Height>
+        <Height>42.9378mm</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>189.02034mm</Width>
+      <Width>189.50223mm</Width>
       <Page>
         <PageHeader>
-          <Height>45.38461mm</Height>
+          <Height>38.32238mm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2027,8 +2244,8 @@
               <Source>Embedded</Source>
               <Value>BancoInternacionallogo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.87853mm</Top>
-              <Left>155.76409mm</Left>
+              <Top>1.19603mm</Top>
+              <Left>1.19138mm</Left>
               <Height>8.12083mm</Height>
               <Width>33.25625mm</Width>
               <ZIndex>1</ZIndex>
@@ -2047,20 +2264,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!RUTCliente.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!RUTCliente.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>RUTCliente</rd:DefaultName>
-                  <Top>1.67569mm</Top>
-                  <Left>14.98918mm</Left>
+                  <Top>0.3175mm</Top>
+                  <Left>14.38946mm</Left>
                   <Height>4.05696mm</Height>
-                  <Width>19.70833mm</Width>
+                  <Width>20.18155mm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2079,10 +2298,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>RUT</Value>
+                          <Value>RUT :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2090,10 +2308,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>1.67569mm</Top>
+                  <Top>0.3175mm</Top>
                   <Left>0.57251mm</Left>
                   <Height>4.05696mm</Height>
-                  <Width>14.41667mm</Width>
+                  <Width>11.70469mm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2113,23 +2331,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Razón social</Value>
+                          <Value>Razón Social :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>1.67569mm</Top>
-                  <Left>35.40306mm</Left>
+                  <Top>0.3175mm</Top>
+                  <Left>36.43632mm</Left>
                   <Height>4.05696mm</Height>
-                  <Width>22.44236mm</Width>
+                  <Width>22.27984mm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2149,20 +2366,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!RazonSocial.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!RazonSocial.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>RazonSocial</rd:DefaultName>
-                  <Top>1.67569mm</Top>
-                  <Left>57.84543mm</Left>
+                  <Top>0.3175mm</Top>
+                  <Left>58.77058mm</Left>
                   <Height>4.05696mm</Height>
-                  <Width>36.20069mm</Width>
+                  <Width>95.76893mm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2182,10 +2402,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>CRD</Value>
+                          <Value>CRD :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2195,7 +2414,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>1.67569mm</Top>
+                  <Top>0.3175mm</Top>
                   <Left>156.3034mm</Left>
                   <Height>4.05696mm</Height>
                   <Width>9.3896mm</Width>
@@ -2218,19 +2437,20 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!CRD.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!CRD.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Center</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>CRD</rd:DefaultName>
-                  <Top>1.67569mm</Top>
+                  <Top>0.3175mm</Top>
                   <Left>165.693mm</Left>
                   <Height>4.05696mm</Height>
                   <Width>19.91144mm</Width>
@@ -2253,10 +2473,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Cod. Act. </Value>
+                          <Value>Cod. Act. Eco. : </Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2266,10 +2485,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>5.73265mm</Top>
+                  <Top>4.4979mm</Top>
                   <Left>0.57251mm</Left>
-                  <Height>4.5861mm</Height>
-                  <Width>14.41667mm</Width>
+                  <Height>4.05696mm</Height>
+                  <Width>19.75244mm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -2289,20 +2508,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!CodActivo.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!CodActivo.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>CodActivo</rd:DefaultName>
-                  <Top>5.73265mm</Top>
-                  <Left>14.98918mm</Left>
-                  <Height>4.5861mm</Height>
-                  <Width>19.70832mm</Width>
+                  <Top>4.4979mm</Top>
+                  <Left>20.43079mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>14.14022mm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
@@ -2322,10 +2543,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Ejecutivo</Value>
+                          <Value>Ejecutivo de Cuenta :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2335,10 +2555,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>10.31875mm</Top>
+                  <Top>8.55486mm</Top>
                   <Left>0.57251mm</Left>
-                  <Height>4.20813mm</Height>
-                  <Width>14.41667mm</Width>
+                  <Height>4.05696mm</Height>
+                  <Width>27.10571mm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -2358,20 +2578,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!Ejecutivo.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!Ejecutivo.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Ejecutivo</rd:DefaultName>
-                  <Top>10.31875mm</Top>
-                  <Left>14.98918mm</Left>
-                  <Height>4.20813mm</Height>
-                  <Width>40.3868mm</Width>
+                  <Top>8.55486mm</Top>
+                  <Left>29.08933mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>48.89585mm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
@@ -2391,23 +2613,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Giro Principal</Value>
+                          <Value>Giro Principal :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>6.35mm</Top>
-                  <Left>35.40306mm</Left>
-                  <Height>3.96875mm</Height>
-                  <Width>22.44236mm</Width>
+                  <Top>4.4979mm</Top>
+                  <Left>36.43632mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>22.27984mm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -2427,20 +2648,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!Giro.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!Giro.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Giro</rd:DefaultName>
-                  <Top>6.35mm</Top>
-                  <Left>57.84543mm</Left>
-                  <Height>3.96875mm</Height>
-                  <Width>36.20069mm</Width>
+                  <Top>4.4979mm</Top>
+                  <Left>58.77058mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>95.76893mm</Width>
                   <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
@@ -2462,21 +2686,20 @@
                         <TextRun>
                           <Value>Segmento:</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>10.31875mm</Top>
-                  <Left>94.7989mm</Left>
-                  <Height>4.20813mm</Height>
-                  <Width>21.73681mm</Width>
+                  <Top>8.55486mm</Top>
+                  <Left>78.33796mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>18.6941mm</Width>
                   <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
@@ -2498,18 +2721,21 @@
                         <TextRun>
                           <Value>=First(Fields!Segmento.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Segmento</rd:DefaultName>
-                  <Top>10.31875mm</Top>
-                  <Left>116.53571mm</Left>
-                  <Height>4.20813mm</Height>
-                  <Width>26.27394mm</Width>
+                  <Top>8.55486mm</Top>
+                  <Left>97.38484mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>45.42481mm</Width>
                   <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
@@ -2529,10 +2755,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>VE</Value>
+                          <Value>V.E. :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2542,9 +2767,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>6.35mm</Top>
+                  <Top>4.4979mm</Top>
                   <Left>156.3034mm</Left>
-                  <Height>3.96875mm</Height>
+                  <Height>4.05696mm</Height>
                   <Width>9.3896mm</Width>
                   <ZIndex>14</ZIndex>
                   <Style>
@@ -2565,17 +2790,20 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!VE.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!VE.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>VE</rd:DefaultName>
-                  <Top>6.35mm</Top>
+                  <Top>4.58611mm</Top>
                   <Left>165.693mm</Left>
                   <Height>3.96875mm</Height>
                   <Width>19.91144mm</Width>
@@ -2598,10 +2826,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Cliente Desde</Value>
+                          <Value>Cliente Desde :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2611,9 +2838,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>10.31875mm</Top>
+                  <Top>8.55487mm</Top>
                   <Left>142.80965mm</Left>
-                  <Height>4.20813mm</Height>
+                  <Height>4.05696mm</Height>
                   <Width>22.88335mm</Width>
                   <ZIndex>16</ZIndex>
                   <Style>
@@ -2634,19 +2861,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!ClienteDesde.Value, "DatosCabecera")</Value>
+                          <Value>=FormatDateTime(First(Fields!ClienteDesde.Value, "DatosCabecera"),DateFormat.ShortDate)</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>ClienteDesde</rd:DefaultName>
-                  <Top>10.31875mm</Top>
+                  <Top>8.55487mm</Top>
                   <Left>165.693mm</Left>
-                  <Height>4.20813mm</Height>
+                  <Height>4.05696mm</Height>
                   <Width>19.91144mm</Width>
                   <ZIndex>17</ZIndex>
                   <Style>
@@ -2664,8 +2894,8 @@
               <KeepTogether>true</KeepTogether>
               <Top>11.08075mm</Top>
               <Left>1.19138mm</Left>
-              <Height>15.82209mm</Height>
-              <Width>187.82894mm</Width>
+              <Height>12.85228mm</Height>
+              <Width>187.82895mm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -2703,9 +2933,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 7, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 5, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 1, 4)</Value>
+                          <Value>=Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo4"), 7, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo4"), 5, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo4"), 1, 4)</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2716,9 +2946,9 @@
                   </Paragraphs>
                   <rd:DefaultName>Periodo</rd:DefaultName>
                   <Top>0.70556mm</Top>
-                  <Left>157.43413mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>28.17031mm</Width>
+                  <Left>155.82892mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2739,7 +2969,7 @@
                         <TextRun>
                           <Value>=First(Fields!Meses.Value, "DatosPeriodo4")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2749,10 +2979,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Meses</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>157.43413mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>28.17031mm</Width>
+                  <Top>4.70556mm</Top>
+                  <Left>155.82895mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -2774,7 +3004,7 @@
                         <TextRun>
                           <Value>=IIF(Parameters!IdTipoBalance.Value = 1, First(Fields!Calidad.Value, "DatosPeriodo4"), First(Fields!CantidadEmpresas.Value, "DatosPeriodo4"))</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2784,10 +3014,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Calidad</rd:DefaultName>
-                  <Top>9.69496mm</Top>
-                  <Left>157.39885mm</Left>
-                  <Height>3.72319mm</Height>
-                  <Width>28.20559mm</Width>
+                  <Top>8.70556mm</Top>
+                  <Left>155.82895mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2809,7 +3039,7 @@
                         <TextRun>
                           <Value>=IIF(Parameters!IdTipoBalance.Value = 1, First(Fields!Calidad.Value, "DatosPeriodo3"), First(Fields!CantidadEmpresas.Value, "DatosPeriodo3"))</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2819,10 +3049,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Calidad</rd:DefaultName>
-                  <Top>9.69496mm</Top>
-                  <Left>124.41413mm</Left>
-                  <Height>3.72319mm</Height>
-                  <Width>32.31444mm</Width>
+                  <Top>8.70556mm</Top>
+                  <Left>123.47617mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -2844,7 +3074,7 @@
                         <TextRun>
                           <Value>=First(Fields!Meses.Value, "DatosPeriodo3")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2854,10 +3084,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Meses</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>124.41413mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>32.31444mm</Width>
+                  <Top>4.70556mm</Top>
+                  <Left>123.47617mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -2879,7 +3109,7 @@
                         <TextRun>
                           <Value>=Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 7, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 5, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo3"), 1, 4)</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2890,9 +3120,9 @@
                   </Paragraphs>
                   <rd:DefaultName>Periodo</rd:DefaultName>
                   <Top>0.70556mm</Top>
-                  <Left>124.41413mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>32.31444mm</Width>
+                  <Left>123.47614mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -2914,7 +3144,7 @@
                         <TextRun>
                           <Value>=Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo2"), 7, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo2"), 5, 2) &amp; "-" &amp; Microsoft.VisualBasic.Strings.Mid(First(Fields!Periodo.Value, "DatosPeriodo2"), 1, 4)</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2925,9 +3155,9 @@
                   </Paragraphs>
                   <rd:DefaultName>Periodo</rd:DefaultName>
                   <Top>0.70556mm</Top>
-                  <Left>90.61954mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>32.38348mm</Width>
+                  <Left>91.12336mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -2949,7 +3179,7 @@
                         <TextRun>
                           <Value>=First(Fields!Meses.Value, "DatosPeriodo2")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2959,10 +3189,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Meses</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>90.61954mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>32.38348mm</Width>
+                  <Top>4.70556mm</Top>
+                  <Left>91.12336mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
@@ -2984,7 +3214,7 @@
                         <TextRun>
                           <Value>=IIF(Parameters!IdTipoBalance.Value = 1, First(Fields!Calidad.Value, "DatosPeriodo2"), First(Fields!CantidadEmpresas.Value, "DatosPeriodo2"))</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -2994,10 +3224,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Calidad</rd:DefaultName>
-                  <Top>9.69496mm</Top>
-                  <Left>90.61954mm</Left>
-                  <Height>3.72319mm</Height>
-                  <Width>32.38348mm</Width>
+                  <Top>8.70556mm</Top>
+                  <Left>91.12336mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -3019,7 +3249,7 @@
                         <TextRun>
                           <Value>=IIF(Parameters!IdTipoBalance.Value = 1, First(Fields!Calidad.Value, "DatosPeriodo1"), First(Fields!CantidadEmpresas.Value, "DatosPeriodo1"))</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -3029,10 +3259,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Calidad</rd:DefaultName>
-                  <Top>9.69496mm</Top>
-                  <Left>54.98746mm</Left>
-                  <Height>3.72319mm</Height>
-                  <Width>33.86819mm</Width>
+                  <Top>8.70556mm</Top>
+                  <Left>58.77058mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
@@ -3054,7 +3284,7 @@
                         <TextRun>
                           <Value>=Sum(Fields!Meses.Value, "DatosPeriodo1")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -3064,10 +3294,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Meses</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>54.98746mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>33.86819mm</Width>
+                  <Top>4.70556mm</Top>
+                  <Left>58.77058mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
@@ -3089,7 +3319,7 @@
                         <TextRun>
                           <Value>=Mid(First(Fields!Periodo.Value, "DatosPeriodo1"), 7,2) &amp; "-" &amp; Mid(First(Fields!Periodo.Value, "DatosPeriodo1"), 5,2) &amp; "-" &amp; Mid(First(Fields!Periodo.Value, "DatosPeriodo1"), 1,4)</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -3100,9 +3330,9 @@
                   </Paragraphs>
                   <rd:DefaultName>Periodo</rd:DefaultName>
                   <Top>0.70556mm</Top>
-                  <Left>54.98746mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>33.86819mm</Width>
+                  <Left>58.77058mm</Left>
+                  <Height>4mm</Height>
+                  <Width>32mm</Width>
                   <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
@@ -3122,23 +3352,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Fecha de Cierre</Value>
+                          <Value>Fecha de Cierre :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>0.70556mm</Top>
-                  <Left>35.52351mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>17.70006mm</Width>
+                  <Top>0.6486mm</Top>
+                  <Left>37.3884mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>21.0294mm</Width>
                   <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
@@ -3158,23 +3387,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Meses</Value>
+                          <Value>Meses :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>35.52351mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>17.70006mm</Width>
+                  <Top>4.6486mm</Top>
+                  <Left>37.3884mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>21.0294mm</Width>
                   <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
@@ -3194,23 +3422,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=IIF(Parameters!IdTipoBalance.Value = 1, "Calidad", "Cant. Emp.")</Value>
+                          <Value>=IIF(Parameters!IdTipoBalance.Value = 1, "Calidad :", "Cant. Emp. :")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Right</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>9.69496mm</Top>
-                  <Left>35.52351mm</Left>
-                  <Height>3.72319mm</Height>
-                  <Width>17.70006mm</Width>
+                  <Top>8.76252mm</Top>
+                  <Left>37.3884mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>21.0294mm</Width>
                   <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
@@ -3230,20 +3457,22 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!Moneda.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!Moneda.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Moneda</rd:DefaultName>
-                  <Top>5.02708mm</Top>
-                  <Left>15.81518mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>19.70833mm</Width>
+                  <Top>4.76252mm</Top>
+                  <Left>15.34196mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>19.476mm</Width>
                   <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
@@ -3263,57 +3492,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=": " &amp; First(Fields!FormatoMoneda.Value, "DatosCabecera")</Value>
+                          <Value>=First(Fields!FormatoMoneda.Value, "DatosCabecera")</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>FormatoMoneda</rd:DefaultName>
-                  <Top>0.70556mm</Top>
-                  <Left>15.81518mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>19.70833mm</Width>
-                  <ZIndex>16</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox25">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Cifras</Value>
-                          <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
                       <Style>
-                        <TextAlign>Left</TextAlign>
+                        <TextAlign>Center</TextAlign>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <rd:DefaultName>Textbox16</rd:DefaultName>
+                  <rd:DefaultName>FormatoMoneda</rd:DefaultName>
                   <Top>0.70556mm</Top>
-                  <Left>0.57251mm</Left>
-                  <Height>3.71676mm</Height>
-                  <Width>14.41667mm</Width>
-                  <ZIndex>17</ZIndex>
+                  <Left>15.34196mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>19.476mm</Width>
+                  <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3332,10 +3527,9 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Moneda</Value>
+                          <Value>Moneda :</Value>
                           <Style>
-                            <FontSize>6pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
+                            <FontSize>7pt</FontSize>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -3345,10 +3539,43 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox16</rd:DefaultName>
-                  <Top>5.02708mm</Top>
+                  <Top>4.76252mm</Top>
                   <Left>0.57251mm</Left>
-                  <Height>3.96232mm</Height>
-                  <Width>14.41667mm</Width>
+                  <Height>4.05696mm</Height>
+                  <Width>14.53711mm</Width>
+                  <ZIndex>17</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox25">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Cifras en :</Value>
+                          <Style>
+                            <FontSize>7pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox16</rd:DefaultName>
+                  <Top>0.70556mm</Top>
+                  <Left>0.57251mm</Left>
+                  <Height>4.05696mm</Height>
+                  <Width>14.53711mm</Width>
                   <ZIndex>18</ZIndex>
                   <Style>
                     <Border>
@@ -3361,12 +3588,112 @@
                     <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
+                <Line Name="Line1">
+                  <Top>0.02108cm</Top>
+                  <Left>5.87162cm</Left>
+                  <Height>1.2708cm</Height>
+                  <Width>0cm</Width>
+                  <ZIndex>19</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>Solid</Style>
+                      <Width>0.25pt</Width>
+                    </Border>
+                    <TopBorder>
+                      <Width>0.25pt</Width>
+                    </TopBorder>
+                    <BottomBorder>
+                      <Width>0.25pt</Width>
+                    </BottomBorder>
+                    <LeftBorder>
+                      <Width>0.25pt</Width>
+                    </LeftBorder>
+                    <RightBorder>
+                      <Width>0.25pt</Width>
+                    </RightBorder>
+                  </Style>
+                </Line>
+                <Line Name="Line2">
+                  <Top>0.02108cm</Top>
+                  <Left>9.09345cm</Left>
+                  <Height>1.2708cm</Height>
+                  <Width>0cm</Width>
+                  <ZIndex>20</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>Solid</Style>
+                      <Width>0.25pt</Width>
+                    </Border>
+                    <TopBorder>
+                      <Width>0.25pt</Width>
+                    </TopBorder>
+                    <BottomBorder>
+                      <Width>0.25pt</Width>
+                    </BottomBorder>
+                    <LeftBorder>
+                      <Width>0.25pt</Width>
+                    </LeftBorder>
+                    <RightBorder>
+                      <Width>0.25pt</Width>
+                    </RightBorder>
+                  </Style>
+                </Line>
+                <Line Name="Line3">
+                  <Top>0.01764cm</Top>
+                  <Left>12.33205cm</Left>
+                  <Height>1.27423cm</Height>
+                  <Width>0cm</Width>
+                  <ZIndex>21</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>Solid</Style>
+                      <Width>0.25pt</Width>
+                    </Border>
+                    <TopBorder>
+                      <Width>0.25pt</Width>
+                    </TopBorder>
+                    <BottomBorder>
+                      <Width>0.25pt</Width>
+                    </BottomBorder>
+                    <LeftBorder>
+                      <Width>0.25pt</Width>
+                    </LeftBorder>
+                    <RightBorder>
+                      <Width>0.25pt</Width>
+                    </RightBorder>
+                  </Style>
+                </Line>
+                <Line Name="Line4">
+                  <Top>0.02108cm</Top>
+                  <Left>15.57936cm</Left>
+                  <Height>1.2708cm</Height>
+                  <Width>0cm</Width>
+                  <ZIndex>22</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>Solid</Style>
+                      <Width>0.25pt</Width>
+                    </Border>
+                    <TopBorder>
+                      <Width>0.25pt</Width>
+                    </TopBorder>
+                    <BottomBorder>
+                      <Width>0.25pt</Width>
+                    </BottomBorder>
+                    <LeftBorder>
+                      <Width>0.25pt</Width>
+                    </LeftBorder>
+                    <RightBorder>
+                      <Width>0.25pt</Width>
+                    </RightBorder>
+                  </Style>
+                </Line>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>27.07923mm</Top>
+              <Top>23.93303mm</Top>
               <Left>1.19138mm</Left>
-              <Height>13.99645mm</Height>
-              <Width>187.82894mm</Width>
+              <Height>12.91877mm</Height>
+              <Width>187.82895mm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -3560,7 +3887,7 @@
           <Value>1134</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Id Periodo 1</Prompt>
+      <Prompt>IdPeriodo1</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="IdPeriodo2">
@@ -3571,7 +3898,7 @@
           <Value>1135</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Id Periodo 1</Prompt>
+      <Prompt>IdPeriodo2</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="IdPeriodo3">
@@ -3582,13 +3909,13 @@
           <Value>1136</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Id Periodo 3</Prompt>
+      <Prompt>IdPeriodo3</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="IdPeriodo4">
       <DataType>Integer</DataType>
       <Nullable>true</Nullable>
-      <Prompt>Id Periodo 4</Prompt>
+      <Prompt>IdPeriodo4</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>

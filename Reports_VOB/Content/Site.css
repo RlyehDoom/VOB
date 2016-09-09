@@ -1,4 +1,20 @@
-﻿body {
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color:#222 !important
+}
+
+body {
     margin-top:110px;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -27,7 +43,6 @@ textarea {
 #layout-header 
 {
    width:100%;
-   background-color: #005F98 !important;
 }
 
 #layout-header-image
@@ -40,7 +55,13 @@ textarea {
     width:150px;
 }
 
+.white {
+    color:white !important;
+}
 .strongwhite {
     color:white !important;
     font-weight:bold;
+}
+.padtop5 {
+    padding-top:5px;
 }

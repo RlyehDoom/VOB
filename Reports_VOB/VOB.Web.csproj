@@ -1357,6 +1357,7 @@
       <DependentUpon>VOB_DataBase.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\localhost.pubxml" />
+    <Content Include="Reportes\Balances Individual-Consolidado.rdl" />
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <Content Include="Reportes\ReportViewer.aspx" />
     <Content Include="Scripts\bootstrap.js" />
