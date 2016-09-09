@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,12 +14,15 @@ namespace VOB.Web.Reportes
 {
     public partial class ReportViewer : System.Web.UI.Page
     {
-        private const string BalanceIndividualConsolidado = "/BancoInternacional/Balances Individual-Consolidado";
-        private const string BalanceCombinado = "";
-        private string Rut, Periodo1, Periodo2, Periodo3, Periodo4, IdCalidad, IdEstado, IdTipoBalance;
-        private string IdPeriodo1, IdPeriodo2, IdPeriodo3, IdPeriodo4;
-        private const string ReportServerUrl = "http://104.238.144.178//ReportServer";
+        private static string ReportServerUrl = Utilidades.ConfigHelper.ObtenerString("ReportServerUri");
+        private static string BalanceIndividualConsolidado = Utilidades.ConfigHelper.ObtenerString("ReportPath");
 
+        private static string ReportUser = Utilidades.ConfigHelper.ObtenerString("ReportUser");
+        private static string ReportPass = Utilidades.ConfigHelper.ObtenerString("ReportPass");
+
+        private string Rut, Periodo1, Periodo2, Periodo3, Periodo4, IdCalidad, IdEstado, IdTipoBalance;
+
+        private string IdPeriodo1, IdPeriodo2, IdPeriodo3, IdPeriodo4;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,10 +46,16 @@ namespace VOB.Web.Reportes
                 RenderReport();
         }
 
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+            DisableUnwantedExportFormat(rptViewer, "Excel"); 
+            DisableUnwantedExportFormat(rptViewer, "EXCELOPENXML");
+        }
+
         private void RenderReport()
         {
-            //rptViewer.Reset();
-            //rptViewer.ProcessingMode = ProcessingMode.Local;
+            rptViewer.Reset();
             rptViewer.ProcessingMode = ProcessingMode.Remote;
             ReportParameterCollection parametros = new ReportParameterCollection();
 
@@ -65,11 +75,24 @@ namespace VOB.Web.Reportes
             parametros.Add(new ReportParameter("IdEstado", "2"));
             parametros.Add(new ReportParameter("IdTipoBalance", IdTipoBalance));
 
-            rptViewer.ServerReport.ReportServerCredentials = new CustomReportCredentials("ReportAdmin", "Iconexa2016.", "");
+            if (ReportUser != string.Empty)
+                rptViewer.ServerReport.ReportServerCredentials = new CustomReportCredentials(ReportUser, ReportPass, "");
+
             rptViewer.ServerReport.SetParameters(parametros);
-            //rptViewer.LocalReport.SetParameters(parametros);
-            
-            //rptViewer.ServerReport.Refresh();
+        }
+
+        private void DisableUnwantedExportFormat(Microsoft.Reporting.WebForms.ReportViewer ReportViewerID, string strFormatName)
+        {
+            FieldInfo info;
+
+            foreach (RenderingExtension extension in ReportViewerID.ServerReport.ListRenderingExtensions())
+            {
+                if (extension.Name.ToUpper() == strFormatName.ToUpper())
+                {
+                    info = extension.GetType().GetField("m_isVisible", BindingFlags.Instance | BindingFlags.NonPublic);
+                    info.SetValue(extension, false);
+                }
+            }
         }
     }
 }

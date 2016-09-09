@@ -57,16 +57,6 @@ namespace VOB.Web.Controllers
                 resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
             }
 
-            if (resultado.Count == 0 && ConfigHelper.ObtenerBoleano("IsDummyData") == true)
-            {
-                resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 1, Periodo = 20131231, Moneda = "Pesos", Estado = "Terminado", Calidad="FECU", Meses= 12, IdCalidad = 1, IdEstado = 2 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 2, Periodo = 20141231, Moneda = "Pesos", Estado = "Terminado", Calidad = "8 Columnas", Meses = 12, IdCalidad = 1, IdEstado = 2 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 3, Periodo = 20151231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12, IdCalidad = 1, IdEstado = 2 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 4, Periodo = 20161231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 12, IdCalidad = 1, IdEstado = 2 });
-                resultado.Add(new ObtenerBalancesPeriodosCliente_Result() { IdPeriodo = 5, Periodo = 20011231, Moneda = "Pesos", Estado = "Terminado", Calidad = "FECU", Meses = 6, IdCalidad = 1, IdEstado = 2 });
-            }
-
             return new JsonResult() { Data = resultado, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
     }
