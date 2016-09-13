@@ -26,18 +26,24 @@
                     <li>@Html.ActionLink("Individual", "Index", "Home",new { }, new { @id="lnkIndividual" })</li>
                     <li>@Html.ActionLink("Consolidado", "Consolidado", "Home", new { }, new { @id = "lnkConsolidado" })</li>
                     <li>@Html.ActionLink("Combinado", "Combinado", "Home", new { }, new { @id = "lnkCombinado" })</li>
+                    <li>@Html.ActionLink("Conceptual", "Index", "Actividad", new { }, new { @id = "lnkConceptual" })</li>
                 </ul>
-                <p class="nav navbar-text navbar-right">Bienvenido, @ViewBag.UserName!</p>
+                <p class="nav navbar-text navbar-right strongwhite">Bienvenido, @ViewBag.UserName!</p>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer class="footer">
-            <p>&copy; @DateTime.Now.Year - @ViewBag.Title</p>
+
+        <footer class="footer container" style="z-index:1;">
+            <p class="pull-left white">&copy; @DateTime.Now.Year - @ViewBag.Title</p>    
+            <p class="pull-right white">Desarrollado por Iconexa S.A</p>
         </footer>
     </div>
+    <footer class="footer" style="width:100%; z-index:0;">
+        
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")

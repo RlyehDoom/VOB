@@ -95,6 +95,15 @@
             }).data("kendoGrid");
             grid.table.on("click", ".gridCheckbox", selectRow);
         }
+        function MarcarReporteSeleccionado() {
+            var tipoBalance = '@Model.IdTipoBalance';
+            if (tipoBalance == "1")
+                $('#lnkIndividual').addClass('strongwhite');
+            if (tipoBalance == "2")
+                $('#lnkConsolidado').addClass('strongwhite');
+            if (tipoBalance == "3")
+                $('#lnkCombinado').addClass('strongwhite');
+        }
     </script>
 }
 

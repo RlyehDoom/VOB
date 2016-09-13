@@ -2,10 +2,6 @@
   position: relative;
   min-height: 100%;
 }
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 30px;
-}
 .footer {
   position: absolute;
   bottom: 0;
@@ -25,6 +21,8 @@ body {
     margin-top:110px;
     padding-top: 10px;
     padding-bottom: 20px;
+    /* Margin bottom by footer height */
+    margin-bottom: 30px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -95,4 +93,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#257db0', end
 .navbar-inverse .navbar-nav > li > a
 {
     color:white;
+}
+
+/* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+.form-horizontal .control-label{
+        padding-top: 7px;
 }

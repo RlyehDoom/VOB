@@ -42,5 +42,8 @@ namespace VOB.Web.Models
 
         [DisplayName("Usuario")]
         public string UsuarioNT { get; set; }
+
+        public string ClientName { get; set; }
+        public string ClientExecutive { get; set; }
     }
 }

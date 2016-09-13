@@ -1,18 +1,6 @@
 ﻿/* ============================================================= */
 /* Registrar funciones Jquery o Javascript que NO utilizen RAZOR */
 /* ============================================================= */
-
-function BuscarDatosCliente() {
-    if ($('#Rut').val() != "") {
-        $('#contenedorSelPer').show("slow", function () {
-            CargarPeriodos();
-        });
-    }
-    else {
-        $('#alertaRUT').show();
-    }
-}
-
 var checkedIds = {};
 var rowDataList = [];
 //on click of the checkbox:
