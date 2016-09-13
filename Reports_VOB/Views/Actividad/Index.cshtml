@@ -1,0 +1,17 @@
+﻿@model VOB.Web.Models.ReporteNormalModel
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            MarcarReporteSeleccionado();
+        });
+
+        function MarcarReporteSeleccionado() {
+            var tipoBalance = '@Model.IdTipoBalance';
+            if (tipoBalance == "4")
+                $('#lnkConceptual').addClass('strongwhite');
+        }
+    </script>
+}
+
+<h1>Coming Soon!</h1>
