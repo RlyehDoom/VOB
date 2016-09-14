@@ -23,7 +23,7 @@
         <asp:ScriptManager ID="mngr" runat="server">
         </asp:ScriptManager>
         <div>
-            <rsweb:ReportViewer ID="rptViewer" runat="server" Width="100%" Height="2500px" ZoomMode="PageWidth" ShowParameterPrompts="false"></rsweb:ReportViewer>
+            <rsweb:ReportViewer ID="rptViewer" runat="server" Width="100%" Height="2000px" ZoomMode="PageWidth" ShowParameterPrompts="false"></rsweb:ReportViewer>
         </div>
     </form>
 </body>

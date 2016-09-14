@@ -92,8 +92,16 @@ namespace VOB.Web.Controllers
                     {
                         model.ClientName = xe.Element("NombreCliente").Value;
                     }
+
+                    foreach (XElement xi in service.ResultXML.Descendants("NMC_Response").Elements("error"))
+                    {
+                        model.ClientName = "WebService ERROR: " + xi.Value;
+                    }
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    model.ClientName = ex.Message;
+                }
             }
             else if (ConfigHelper.ObtenerBoleano("ReportWebServiceOn") == false)
             {
