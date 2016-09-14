@@ -67,7 +67,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\microsoft-web-helpers.2.1.20710.2\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\microsoft-web-helpers.2.0.20710.1\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -76,6 +76,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.6.30117.9648, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.1.6.2\lib\net40\NuGet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -111,6 +115,10 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Administration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Administration.2.0.20505.0\lib\net40\System.Web.WebPages.Administration.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -268,6 +276,10 @@
     <Compile Include="Utilidades\BaseClass.cs" />
     <Compile Include="Utilidades\SecurityClass.cs" />
     <Compile Include="Utilidades\UtilityClass.cs" />
+    <Compile Include="WebService\WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1350,6 +1362,8 @@
     <Content Include="Content\kendo\2016.2.714-source\common\transitions.less" />
     <Content Include="Readme.txt" />
     <Content Include="Reportes\BalancesRenovado.rdl" />
+    <Content Include="Utilidades\ConsultaCliente.xml" />
+    <Content Include="WebService\WebService1.asmx" />
     <EntityDeploy Include="DataBaseModel\VOB_DataBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>VOB_DataBase.Designer.cs</LastGenOutput>
@@ -2498,6 +2512,7 @@
     <Content Include="Scripts\kendo\2016.2.714\kendo.all.min.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Actividad\Index.cshtml" />
+    <Content Include="WebService\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -73,11 +73,11 @@ namespace VOB.Web.Controllers
             Models.ReporteNormalModel datos = new Models.ReporteNormalModel();
             datos.Rut = rutCliente;
             ObtieneDatosCliente(ref datos);
-
+            
             return new JsonResult() { Data = datos, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        private static void ObtieneDatosCliente(ref Models.ReporteNormalModel model)
+        private void ObtieneDatosCliente(ref Models.ReporteNormalModel model)
         {
             if (!string.IsNullOrEmpty(model.Rut) && ConfigHelper.ObtenerBoleano("ReportWebServiceOn"))
             {
@@ -86,16 +86,15 @@ namespace VOB.Web.Controllers
                     WSHelper.WebService service = new WSHelper.WebService(ConfigHelper.ObtenerString("ReportWebServiceURL"), "ConsultaCliente");
                     service.Params.Add("RutCliente", model.Rut);
                     service.Invoke();
-
-                    XNamespace df = service.ResultXML.Root.Name.Namespace;
-                    foreach (XElement xe in service.ResultXML.Descendants("NMC_Response").Descendants("InformacionCliente").Descendants("Persona"))
+                    
+                    string ns = ConfigHelper.ObtenerString("ReportWebServiceNamespace");
+                    foreach (XElement xe in service.ResultXML.Descendants(ns + "NMC_Response").Descendants(ns + "InformacionCliente").Descendants(ns + "Persona"))
                     {
-                        model.ClientName = xe.Element("NombreCliente").Value;
-                    }
-
-                    foreach (XElement xi in service.ResultXML.Descendants("NMC_Response").Elements("error"))
-                    {
-                        model.ClientName = "WebService ERROR: " + xi.Value;
+                        model.ClientName = xe.Element(ns + "NombreCliente").Value;
+                        foreach (XElement x in xe.Descendants(ns + "EjecutivoAsociado"))
+                        {
+                            model.ClientExecutive = x.Element(ns + "NombreEjecutivo").Value;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -105,8 +104,13 @@ namespace VOB.Web.Controllers
             }
             else if (ConfigHelper.ObtenerBoleano("ReportWebServiceOn") == false)
             {
-                model.ClientName = "Nombre falso. servicio apagado...";
+                model.ClientName = "Servicio apagado...";
             }
+        }
+
+        private XDocument XMLResultDummy()
+        {
+            return XDocument.Load(Server.MapPath("~/Utilidades/ConsultaCliente.xml"));
         }
     }
 }

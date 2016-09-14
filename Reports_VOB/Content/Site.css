@@ -99,3 +99,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#257db0', end
 .form-horizontal .control-label{
         padding-top: 7px;
 }
+.control-label {
+    font-size:12px;
+}
+.smalltext {
+    font-size:10px;
+}

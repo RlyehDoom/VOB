@@ -76,7 +76,18 @@ namespace VOB.Web.Reportes
             parametros.Add(new ReportParameter("IdTipoBalance", IdTipoBalance));
 
             if (ReportUser != string.Empty)
-                rptViewer.ServerReport.ReportServerCredentials = new CustomReportCredentials(ReportUser, ReportPass, "");
+            {
+                string user = string.Empty, domain = string.Empty;
+                if (ReportUser.Contains("\\"))
+                {
+                    domain = ReportUser.Substring(0, ReportUser.IndexOf("\\"));
+                    user = ReportUser.Substring(ReportUser.IndexOf("\\") + 1);
+                }
+                else
+                    user = ReportUser;
+
+                rptViewer.ServerReport.ReportServerCredentials = new CustomReportCredentials(user, ReportPass, domain);
+            }
 
             rptViewer.ServerReport.SetParameters(parametros);
         }

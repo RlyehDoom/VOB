@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NMC_Response
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://tempuri.org/">
+  <Estado>OK</Estado>
+  <Mensaje />
+  <InformacionCliente>
+    <TipoCliente>Persona</TipoCliente>
+    <Persona>
+      <IdDatosCliente>142784</IdDatosCliente>
+      <RutCliente>910210009</RutCliente>
+      <NombreCliente>CRISTIAN ANTONIO</NombreCliente>
+      <CodigoTipoCliente>01</CodigoTipoCliente>
+      <CodigoIngresoProyectado />
+      <CodTipoSeguimiento />
+      <FechaAlta>2015-10-13T15:35:09.117</FechaAlta>
+      <TS_DatosCliente>AAAABVueUCw=</TS_DatosCliente>
+      <CodMotivoBloqueo>00</CodMotivoBloqueo>
+      <FechaBloqueo>1900-01-01T00:00:00</FechaBloqueo>
+      <IndicadorEstadoCliente>0</IndicadorEstadoCliente>
+      <FechaDatos>2015-10-14T16:40:15.29</FechaDatos>
+      <CodigoUsuarioIngresaBloqueo xsi:nil="true" />
+      <SucursalHabitual>061</SucursalHabitual>
+      <DescripcionSucursal>BANCA PROPIA 2</DescripcionSucursal>
+      <CategoriaFC>03</CategoriaFC>
+      <IndicadorNacionalidad>CL</IndicadorNacionalidad>
+      <FechaInicioActividades>1900-01-01T00:00:00</FechaInicioActividades>
+      <ActividadEconomica />
+      <IndicadorBloqueo>false</IndicadorBloqueo>
+      <ApellidoPaterno>OYARZO</ApellidoPaterno>
+      <ApellidoMaterno>GARCIA</ApellidoMaterno>
+      <PersonaNatural>true</PersonaNatural>
+      <BloqueoOpPuntual>NO</BloqueoOpPuntual>
+      <CodCategoriaCliente>0</CodCategoriaCliente>
+      <Segmentacion>PPFD</Segmentacion>
+      <FechaEvaluacion>2015-10-13T00:00:00</FechaEvaluacion>
+      <TipoAvalSbif />
+      <InformeEntrada>false</InformeEntrada>
+      <FechaInformeEntrada>1900-01-01T00:00:00</FechaInformeEntrada>
+      <ClienteEnNormalizacion>false</ClienteEnNormalizacion>
+      <ClienteActivo>false</ClienteActivo>
+      <UsuarioIngresoMod>0077287574</UsuarioIngresoMod>
+      <IdEjecutivo>1537</IdEjecutivo>
+      <NacionalidadSecundaria>CL</NacionalidadSecundaria>
+      <Kit>false</Kit>
+      <EsFatca>false</EsFatca>
+      <FechaFatca>2015-10-13T00:00:00</FechaFatca>
+      <PoseeKYC xsi:nil="true" />
+      <FechaKYC>2015-10-13T00:00:00</FechaKYC>
+      <ListaCasillas />
+      <ListaCorrespondenciaElectronica />
+      <EjecutivoAsociado>
+        <IdEjecutivo>1537</IdEjecutivo>
+        <TS>AAAABAr0ngg=</TS>
+        <IdParametros xsi:nil="true" />
+        <IdUsuario>4012</IdUsuario>
+        <RutEjecutivo>0000006998</RutEjecutivo>
+        <NombreEjecutivo>ELISA ALMONACID MULLER</NombreEjecutivo>
+        <CodigoSucursal>061</CodigoSucursal>
+        <Cargo>EJCUE</Cargo>
+        <MontoMaxAtribIndividual>0</MontoMaxAtribIndividual>
+        <CodigoInternoEjecCuenta>3047</CodigoInternoEjecCuenta>
+        <Fecha>2013-12-18T00:00:00</Fecha>
+        <EstructuraOrganizacional>SUCMA</EstructuraOrganizacional>
+        <Mail>EALMONACID@BANCOINTERNACIONAL.CL</Mail>
+        <Fono />
+        <VigenciaEjecutivo>1</VigenciaEjecutivo>
+      </EjecutivoAsociado>
+      <DatosSbif>
+        <TipoDeudor>01</TipoDeudor>
+        <EstadoDeudor>0</EstadoDeudor>
+        <CalidadJuridicaDeudor>1</CalidadJuridicaDeudor>
+        <RelacionDeudor>09</RelacionDeudor>
+        <CategoriaDeudor>3</CategoriaDeudor>
+        <SectorEconomicoDeudor>125</SectorEconomicoDeudor>
+        <GrupoEconomicoDeudor />
+        <LocalidadDeudor>138401</LocalidadDeudor>
+        <ActividadEconomicaVentaDeudor />
+        <ClasificacionRiesgoVentaDeudor />
+        <ClasificacionRiesgoActualDeudor>SC</ClasificacionRiesgoActualDeudor>
+        <FechaClasificacionRiesgoActualDeudor>2015-10-13T00:00:00</FechaClasificacionRiesgoActualDeudor>
+        <FechaIngresoDatos>2015-10-14T16:37:30.7</FechaIngresoDatos>
+        <IdDatosBif>116239</IdDatosBif>
+        <IdDatosCliente>142784</IdDatosCliente>
+        <TS>AAAABCHw4jg=</TS>
+        <TipoEvaluacion>ND</TipoEvaluacion>
+        <FechaEvaluacion>2015-10-13T00:00:00</FechaEvaluacion>
+        <IndicadorDeterioroManual />
+        <FechaDeterioroManual>1900-01-01T00:00:00</FechaDeterioroManual>
+        <IndicadorClienteRenegociado />
+        <FechaClienteRenegociado>1900-01-01T00:00:00</FechaClienteRenegociado>
+        <PorcentajeProvisionClienteReneg>0.00</PorcentajeProvisionClienteReneg>
+        <CodigoSegmentoCliente />
+        <FechaSegmentoCliente>1900-01-01T00:00:00</FechaSegmentoCliente>
+        <ClienteGiroComercial>PSGC</ClienteGiroComercial>
+        <CondicionPep xsi:nil="true" />
+        <FechaCondicionPep>2015-10-13T00:00:00</FechaCondicionPep>
+      </DatosSbif>
+      <RelacionesClientes />
+      <GruposEconomicos>
+        <NMC_RelacionClienteGrupoEconomico>
+          <TipoGrupoEconomicoRelacionado>09</TipoGrupoEconomicoRelacionado>
+          <CodigoGrupoEconomicoRelacionado>08800</CodigoGrupoEconomicoRelacionado>
+          <FechaIngresoDatos>2015-10-13T15:37:01.6</FechaIngresoDatos>
+          <IdRelacionClienteGrupoEconomico>1964</IdRelacionClienteGrupoEconomico>
+          <IdDatosCliente>142784</IdDatosCliente>
+          <TS>AAAABCDIlWc=</TS>
+          <NombreTipoGrupoEconomico>NO RELACIONADO</NombreTipoGrupoEconomico>
+          <NombreGrupoEconomico>FUNCIONARIO BIN</NombreGrupoEconomico>
+        </NMC_RelacionClienteGrupoEconomico>
+      </GruposEconomicos>
+      <Participaciones />
+      <Socios />
+      <ListaDatosCaducados>
+        <NMC_DatosCaducados>
+          <DatoCaducado>DireccionComercial</DatoCaducado>
+          <FechaCaducidad>1901-01-01T00:00:00</FechaCaducidad>
+        </NMC_DatosCaducados>
+      </ListaDatosCaducados>
+      <RequiereControlDual>false</RequiereControlDual>
+      <ConDatosCaducados>false</ConDatosCaducados>
+      <IdPersonas>113865</IdPersonas>
+      <RutPersona>0124310156</RutPersona>
+      <FechaNacimiento>1973-02-16T00:00:00</FechaNacimiento>
+      <FechaDefuncion>1900-01-01T00:00:00</FechaDefuncion>
+      <Sexo>M</Sexo>
+      <NivelEducacional>4</NivelEducacional>
+      <EstadoCivil>1</EstadoCivil>
+      <SeparacionBienes>NO</SeparacionBienes>
+      <ProporcionSeparacionBienes>0</ProporcionSeparacionBienes>
+      <NombreEmpleador>BANCO INTERNCIONAL</NombreEmpleador>
+      <Cargo>JEFE DE PROYECTOS</Cargo>
+      <FechaIngresoEmpleo>2015-09-14T00:00:00</FechaIngresoEmpleo>
+      <FechaIngresoDatos>2015-10-14T16:37:30.363</FechaIngresoDatos>
+      <NumeroDeDependientes>0</NumeroDeDependientes>
+      <TS>AAAABCHw4jQ=</TS>
+      <IndLaboral>01</IndLaboral>
+      <RentaLiquidaMensual>0.00000</RentaLiquidaMensual>
+      <RentaLiquidaFamiliar>0.00000</RentaLiquidaFamiliar>
+      <PoseeViviendaPropia>false</PoseeViviendaPropia>
+      <AnioAutomovil>0</AnioAutomovil>
+      <HijosUniversidad>0</HijosUniversidad>
+      <Patrimonio>0.00000</Patrimonio>
+      <Profesion>0</Profesion>
+      <Hobbie />
+      <FechaActualizacionEESS>2015-10-13T00:00:00</FechaActualizacionEESS>
+      <RutEmpleador>0970110003</RutEmpleador>
+      <PoseeConvenio />
+      <TipoConvenio />
+      <TelefonoParticular>83407561</TelefonoParticular>
+      <TelefonoComercial />
+      <TelefonoCelular>83407561</TelefonoCelular>
+      <Email>COYARZO@BANCOINTERNACIONAL.CL</Email>
+      <EmailAlternativo />
+      <NombreEmpresa />
+      <TipoContrato />
+      <Fax />
+      <DireccionParticular>
+        <IdDirecciones>127432</IdDirecciones>
+        <TipoDireccion>2</TipoDireccion>
+        <Calle>VINA DEL MONTE PONIENTE</Calle>
+        <Numero>4478</Numero>
+        <Lugar />
+        <NumeroLugar />
+        <ConjuntoHabitacional>CONDOMINIO</ConjuntoHabitacional>
+        <NombreConjuntoHabitacional>NUEVOS FALDEOS DE LA VINA II</NombreConjuntoHabitacional>
+        <Comuna>910</Comuna>
+        <Ciudad>PALTO</Ciudad>
+        <NumeroRegion>13</NumeroRegion>
+        <IndicadorVerificacionDomicilio>NO</IndicadorVerificacionDomicilio>
+        <ResponsableVerificarDomicilio />
+        <FechaVerificacionDomicilio>1900-01-01T00:00:00</FechaVerificacionDomicilio>
+        <IndicadorDevolucionCorreo />
+        <MotivoDevolucionCorreo />
+        <FechaIngresoDatos>2015-10-13T15:35:09.043</FechaIngresoDatos>
+        <FechaActualizacion>2015-10-14T16:40:15.29</FechaActualizacion>
+        <TS>AAAABCHzvPc=</TS>
+        <CodPais>CL</CodPais>
+        <CodTipoVivienda />
+        <DireccionLegal>true</DireccionLegal>
+        <DireccionCorrespondencia>true</DireccionCorrespondencia>
+        <IDCanalEjecutor>1</IDCanalEjecutor>
+        <Vigente>true</Vigente>
+        <IdPersonas>113865</IdPersonas>
+      </DireccionParticular>
+      <Conyuge>
+        <IdDatosConyuge>15728</IdDatosConyuge>
+        <RutConyuge>0126582749</RutConyuge>
+        <Nombre>FABIOLA ALEJANDRA</Nombre>
+        <ApellidoPaterno>URRA</ApellidoPaterno>
+        <ApellidoMaterno>SEVERIN</ApellidoMaterno>
+        <FechaNacmiento>1974-08-27T00:00:00</FechaNacmiento>
+        <FechaDefuncion>1900-01-01T00:00:00</FechaDefuncion>
+        <Sexo>F</Sexo>
+        <Nacionalidad />
+        <TipoTrabajador />
+        <Empleador />
+        <Cargo />
+        <FechaIngreso>2015-10-14T16:37:30.057</FechaIngreso>
+        <CodActividad />
+        <FechaInicioActividades>1900-01-01T00:00:00</FechaInicioActividades>
+        <TS_Conyuge>AAAABCHw4jc=</TS_Conyuge>
+        <Antiguedad>0</Antiguedad>
+        <NivelEducacional />
+        <Profesion />
+        <NacionalidadSecundaria />
+        <EsFatca>false</EsFatca>
+        <IdPersonas>113865</IdPersonas>
+      </Conyuge>
+    </Persona>
+  </InformacionCliente>
+</NMC_Response>
