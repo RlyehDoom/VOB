@@ -262,3 +262,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+*.suo
+Reports_VOB/bin/VOB.Web.dll
+*.pdb
+Reports_VOB/obj/Debug/VOB.Web.dll
+*.pdb
