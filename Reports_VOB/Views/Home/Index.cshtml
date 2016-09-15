@@ -127,6 +127,20 @@
                 }
             });
         }
+
+        function GenerarReporte() {
+            $("#defaultForm").submit();
+        }
+
+        var ButtonKeys = { "EnterKey": 13 };
+        $(function () {
+            $("#defaultForm").keypress(function (e) {
+                if (e.which == ButtonKeys.EnterKey) {
+                    $('#btnBuscarCliente').click();
+                    return false;
+                }
+            });
+        });
     </script>
 }
 
@@ -135,7 +149,7 @@
     <strong>Advertencia!</strong> Por favor ingrese un RUT valido.
 </div>
 <br />
-@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "" }))
+@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @id="defaultForm" }))
 {
     <div id="controlesBusqueda">
         <div class="row">
@@ -179,7 +193,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <br />
-                <input id="btnGeneraReporte" type="submit" class="btn btn-primary pull-right disabled" disabled="disabled" value="Generar Reporte" />
+                <input id="btnGeneraReporte" type="button" class="btn btn-primary pull-right disabled" disabled="disabled" value="Generar Reporte" onclick="GenerarReporte()" />
             </div>
         </div>
         <br />

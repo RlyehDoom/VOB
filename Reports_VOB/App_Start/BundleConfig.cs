@@ -33,8 +33,8 @@ namespace VOB.Web
             /* KENDO UI */
             bundles.Add(new StyleBundle("~/Content/KendoCss").Include(
                 "~/Content/Kendo/2016.2.714/kendo.common.min.css",
-                "~/Content/Kendo/2016.2.714/kendo.default.min.css",
-                "~/Content/Kendo/2016.2.714/kendo.default.mobile.min.css"));
+                "~/Content/Kendo/2016.2.714/kendo.blueopal.min.css",
+                "~/Content/Kendo/2016.2.714/kendo.blueopal.mobile.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/KendoJs").Include(
                 "~/Scripts/kendo/2016.2.714/kendo.all.min.js",
