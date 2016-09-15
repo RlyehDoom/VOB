@@ -21,19 +21,59 @@ namespace VOB.Web.WebService
         [WebMethod]
         public ResultInfo ConsultaCliente(string RutCliente)
         {
-            return new ResultInfo(RutCliente, "José Luis");
+            return new ResultInfo("ok", "Persona");
         }
     }
 
     public class ResultInfo
     {
         public ResultInfo() { }
-        public ResultInfo(string rut, string name)
+        public ResultInfo(string estado, string tipoPersona)
         {
-            this.rut = rut;
-            this.name = name;
+            this.Estado = estado;
+            InfoClient infoC = new InfoClient(tipoPersona);
+            infoC.Persona = new Per("Empresa servicio dummy");
+
+            this.InformacionCliente = infoC;
         }
-        public string rut { get; set; }
-        public string name { get; set; }
+        public string Estado { get; set; }
+
+        public InfoClient InformacionCliente { get; set; }
+    }
+
+    public class InfoClient
+    {
+        public InfoClient() { }
+        public InfoClient(string tipoCliente)
+        {
+            TipoCliente = tipoCliente;
+        }
+        public string TipoCliente { get; set; }
+
+        public Per Persona { get; set; }
+    }
+
+    public class Per
+    {
+        public Per() {}
+        public Per(string nombreEmpresa)
+        {
+            this.NombreEmpresa = nombreEmpresa;
+        }
+        public string NombreEmpresa { get; set; }
+
+        public Eje EjecutivoAsociado { get; set; }
+    }
+
+    public class Eje
+    {
+        public Eje() { }
+        public Eje(int id, string rut, string nombre)
+        {
+
+        }
+        public int IdEjecutivo { get; set; }
+        public string RutEjecutivo { get; set; }
+        public string NombreEjecutivo { get; set; }
     }
 }

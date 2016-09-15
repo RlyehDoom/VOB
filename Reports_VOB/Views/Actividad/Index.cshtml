@@ -14,7 +14,7 @@
     </script>
 }
 
-@using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @class = "" }))
+@using (Html.BeginForm("Index", "Actividad", new { }, FormMethod.Post, new { @id = "FormDefault" }))
 {
     <h1>TESTING PAGE</h1>
     <br />
@@ -25,17 +25,15 @@
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     @Html.TextBoxFor(m => m.Rut, new { @class = "form-control medium-size", @placeholder = Html.DisplayNameFor(m => m.Rut) })
                     <span class="input-group-btn pull-left">
-                        <button id="btnBuscarCliente" type="submit" class="btn btn-default disabled">Buscar</button>
+                        <button id="btnBuscarCliente" type="submit" class="btn btn-default">Buscar</button>
                     </span>
                 </div>
             </div>
         </div>
     </div>
     <br />
-    <form>
-        <div class="form-group">
-            <label for="inputEmail">Resultado:</label>
-            @Html.TextBoxFor(m => m.ClientName, new { @class = "form-control", @placeholder ="Resultado..." })
-        </div>
-    </form>
+    <div class="form-group">
+        <label for="inputEmail">Resultado:</label>
+        @Html.TextBoxFor(m => m.ClienteNombre, new { @class = "form-control" , @style="width:100%;" })
+    </div>
 }

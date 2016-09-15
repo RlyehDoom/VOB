@@ -43,7 +43,10 @@ namespace VOB.Web.Models
         [DisplayName("Usuario")]
         public string UsuarioNT { get; set; }
 
-        public string ClientName { get; set; }
-        public string ClientExecutive { get; set; }
+        public string ClienteNombre { get; set; }
+        public int EjecutivoId { get; set; }
+        public string EjecutivoNombre { get; set; }
+        public string EjecutivoRut { get; set; }
+        public int EjecutivoCodigoPerfil { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace VOB.Web.Controllers
     {
         public ActionResult Index(Models.ReporteNormalModel model)
         {
+            ModelState.Clear();
+
             model.IdTipoBalance = 4;
             model.TituloBalance = "Conceptual";
             ViewBag.Title = "Banco Internacional - Reporte Financiero Conceptual";
@@ -19,27 +21,58 @@ namespace VOB.Web.Controllers
 
             if (!string.IsNullOrEmpty(model.Rut))
             {
-                WSHelper.WebService service = new WSHelper.WebService(ConfigHelper.ObtenerString("ReportWebServiceURL"), "ConsultaCliente");
+                WSHelper.WebService service = new WSHelper.WebService(ConfigHelper.ObtenerString("ReportWebServiceURLTesting"), "ConsultaCliente");
                 service.Params.Add("RutCliente", model.Rut);
                 service.Invoke();
 
-                model.ClientName = service.ResultXML.ToString();
-
-                string ns = ConfigHelper.ObtenerString("ReportWebServiceNamespace");
-                foreach (XElement xe in service.ResultXML.Descendants(ns + "NMC_Response").Descendants(ns + "InformacionCliente").Descendants(ns + "Persona"))
+                string ns = "{" + ConfigHelper.ObtenerString("ReportWebServiceNamespace") + "}";
+                foreach (XElement xe in service.ResultXML.Descendants(ns + "ConsultaClienteResponse").Descendants(ns + "ConsultaClienteResult"))
                 {
-                    model.ClientName = xe.Element(ns + "NombreCliente").Value;
+                    string estado; 
+                    estado = (string)xe.Element(ns + "Estado");
 
-                    foreach (XElement x in xe.Descendants(ns + "EjecutivoAsociado"))
+                    if (estado != null && estado.ToUpper() == "OK")
                     {
-                        model.ClientExecutive = x.Element(ns + "NombreEjecutivo").Value;
+                        foreach (XElement info in xe.Descendants(ns + "InformacionCliente"))
+                        {
+                            string tipoPersona = (string)info.Element(ns + "TipoCliente");
+
+                            if (tipoPersona.ToUpper() == "PERSONA")
+                            {
+                                foreach (XElement per in info.Descendants(ns + "Persona"))
+                                {
+                                    model.ClienteNombre = (string)per.Element(ns + "NombreEmpresa");
+
+                                    foreach (XElement eje in per.Descendants(ns + "EjecutivoAsociado"))
+                                    {
+                                        model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
+                                        model.EjecutivoRut = (string)eje.Element(ns + "RutEjecutivo");
+                                        model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
+                                    }
+                                }
+                            }
+                            if (tipoPersona.ToUpper() == "EMPRESA")
+                            {
+                                foreach (XElement emp in info.Descendants(ns + "Empresa"))
+                                {
+                                    model.ClienteNombre = (string)emp.Element(ns + "NombreFantasia");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        model.ClienteNombre = "Cliente no EXISTE";
                     }
                 }
 
-                model.ClientName = model.ClientName + " | " + model.ClientExecutive;
+                if (string.IsNullOrEmpty(model.ClienteNombre))
+                {
+                    model.ClienteNombre = service.ResultXML.ToString();
+                }
             }
 
-            return View("Index", model);
+            return View(model);
         }
     }
 }

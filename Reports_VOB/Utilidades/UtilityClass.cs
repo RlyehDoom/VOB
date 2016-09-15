@@ -116,14 +116,15 @@ namespace VOB.Web.Utilidades
                xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" 
                xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
               <soap:Body>
-                <{0} xmlns=""http://tempuri.org/"">
+                <{0} xmlns=""ns1"">
                   {1}
                 </{0}>
               </soap:Body>
             </soap:Envelope>";
 
+                soapStr = soapStr.Replace("ns1", ConfigHelper.ObtenerString("ReportWebServiceNamespace"));
                 HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Url);
-                req.Headers.Add("SOAPAction", "\"http://tempuri.org/" + MethodName + "\"");
+                req.Headers.Add("SOAPAction", "\"" + ConfigHelper.ObtenerString("ReportWebServiceNamespace") + MethodName + "\"");
                 req.ContentType = "text/xml;charset=\"utf-8\"";
                 req.Accept = "text/xml";
                 req.Method = "POST";

@@ -120,8 +120,8 @@
                 if (data) {
                     console.log('Respuesta/ObtieneDatosRutCliente: ' + JSON.stringify(data));
                     if (data.ClientName != "") {
-                        $('#clientDataName').text(data.ClientName);
-                        $('#clientExecutive').text(data.ClientExecutive);
+                        $('#clientDataName').text(data.ClienteNombre);
+                        $('#clientExecutive').text(data.EjecutivoNombre);
                         $('.form-horizontal').show();
                     }
                 }

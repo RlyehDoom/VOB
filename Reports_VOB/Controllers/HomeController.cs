@@ -86,25 +86,56 @@ namespace VOB.Web.Controllers
                     WSHelper.WebService service = new WSHelper.WebService(ConfigHelper.ObtenerString("ReportWebServiceURL"), "ConsultaCliente");
                     service.Params.Add("RutCliente", model.Rut);
                     service.Invoke();
-                    
-                    string ns = ConfigHelper.ObtenerString("ReportWebServiceNamespace");
-                    foreach (XElement xe in service.ResultXML.Descendants(ns + "NMC_Response").Descendants(ns + "InformacionCliente").Descendants(ns + "Persona"))
+
+                    string ns = "{" + ConfigHelper.ObtenerString("ReportWebServiceNamespace") + "}";
+                    foreach (XElement xe in service.ResultXML.Descendants(ns + "ConsultaClienteResponse").Descendants(ns + "ConsultaClienteResult"))
                     {
-                        model.ClientName = xe.Element(ns + "NombreCliente").Value;
-                        foreach (XElement x in xe.Descendants(ns + "EjecutivoAsociado"))
+                        string estado;
+                        estado = (string)xe.Element(ns + "Estado");
+
+                        if (estado != null && estado.ToUpper() == "OK")
                         {
-                            model.ClientExecutive = x.Element(ns + "NombreEjecutivo").Value;
+                            foreach (XElement info in xe.Descendants(ns + "InformacionCliente"))
+                            {
+                                string tipoPersona = (string)info.Element(ns + "TipoCliente");
+
+                                if (tipoPersona.ToUpper() == "PERSONA")
+                                {
+                                    foreach (XElement per in info.Descendants(ns + "Persona"))
+                                    {
+                                        model.ClienteNombre = (string)per.Element(ns + "NombreEmpresa");
+
+                                        foreach (XElement eje in per.Descendants(ns + "EjecutivoAsociado"))
+                                        {
+                                            model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
+                                            model.EjecutivoRut = (string)eje.Element(ns + "RutEjecutivo");
+                                            model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
+                                        }
+                                    }
+                                }
+                                if (tipoPersona.ToUpper() == "EMPRESA")
+                                {
+                                    foreach (XElement emp in info.Descendants(ns + "Empresa"))
+                                    {
+                                        model.ClienteNombre = (string)emp.Element(ns + "NombreFantasia");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            model.ClienteNombre = "Cliente No EXISTE";
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    model.ClientName = ex.Message;
+                    model.ClienteNombre = ex.Message;
                 }
             }
             else if (ConfigHelper.ObtenerBoleano("ReportWebServiceOn") == false)
             {
-                model.ClientName = "Servicio apagado...";
+                model.ClienteNombre = "Servicio apagado...";
             }
         }
 
