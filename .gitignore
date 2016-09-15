@@ -263,3 +263,6 @@ paket-files/
 __pycache__/
 *.pyc
 .vs/Reports_VOB/v14/.suo
+Reports_VOB/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+.vs/config/applicationhost.config
+Reports_VOB/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
