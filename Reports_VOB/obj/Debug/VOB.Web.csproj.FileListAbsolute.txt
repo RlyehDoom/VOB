@@ -350,3 +350,4 @@ C:\Repos\VOB\Reports_VOB\bin\NuGet.Core.dll
 C:\Repos\VOB\Reports_VOB\bin\System.Web.WebPages.Administration.dll
 D:\GIT\VOB\Reports_VOB\bin\NuGet.Core.dll
 D:\GIT\VOB\Reports_VOB\bin\System.Web.WebPages.Administration.dll
+C:\Repos\VOB\Reports_VOB\obj\Debug\VOB.Web.csprojResolveAssemblyReference.cache

@@ -50,6 +50,10 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/KendoJs")
     @Scripts.Render("~/bundles/Utilities")
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        @Scripts.Render("~/bundles/IE8Crap")
+    <![endif]-->
     @RenderSection("scripts", required: false)
 </body>
 </html>

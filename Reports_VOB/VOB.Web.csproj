@@ -1362,6 +1362,10 @@
     <Content Include="Content\kendo\2016.2.714-source\common\transitions.less" />
     <Content Include="Readme.txt" />
     <Content Include="Reportes\BalancesRenovado.rdl" />
+    <Content Include="Scripts\html5shiv-printshiv.js" />
+    <Content Include="Scripts\html5shiv-printshiv.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Utilidades\ConsultaCliente.xml" />
     <Content Include="WebService\WebService1.asmx" />
     <EntityDeploy Include="DataBaseModel\VOB_DataBase.edmx">
