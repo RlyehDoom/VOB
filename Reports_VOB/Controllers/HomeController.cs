@@ -13,12 +13,34 @@ namespace VOB.Web.Controllers
     {
         public ActionResult Index(Models.ReporteNormalModel model)
         {
+            Session.Clear();
+            string rutEjecutivo = Request.QueryString["id"];
+            string perfilEjecutivo = Request.QueryString["perf"];
+
+            if (rutEjecutivo != null && rutEjecutivo != string.Empty)
+            {
+                Session["rutEjecutivo"] = rutEjecutivo;
+                Session["perfilEjecutivo"] = perfilEjecutivo;
+            }
+
             model.IdTipoBalance = 1;
             model.TituloBalance = "Individual";
             ViewBag.Title = "Banco Internacional - Reporte Financiero Individual";
             ViewBag.UserName = UsuarioNT;
 
-            ObtieneDatosCliente(ref model);
+            //ObtieneDatosCliente(ref model);
+
+            return View("Index", model);
+        }
+
+        public ActionResult Individual(Models.ReporteNormalModel model)
+        {
+            model.IdTipoBalance = 1;
+            model.TituloBalance = "Individual";
+            ViewBag.Title = "Banco Internacional - Reporte Financiero Individual";
+            ViewBag.UserName = UsuarioNT;
+
+            //ObtieneDatosCliente(ref model);
 
             return View("Index", model);
         }
@@ -29,7 +51,8 @@ namespace VOB.Web.Controllers
             model.TituloBalance = "Consolidado";
             ViewBag.Title = "Banco Internacional - Reporte Financiero Consolidado";
             ViewBag.UserName = UsuarioNT;
-            ObtieneDatosCliente(ref model);
+
+            //ObtieneDatosCliente(ref model);
 
             return View("Index", model);
         }
@@ -40,7 +63,8 @@ namespace VOB.Web.Controllers
             model.TituloBalance = "Combinado";
             ViewBag.Title = "Banco Internacional - Reporte Financiero Combinado";
             ViewBag.UserName = UsuarioNT;
-            ObtieneDatosCliente(ref model);
+
+            //ObtieneDatosCliente(ref model);
 
             return View("Index", model);
         }
@@ -53,16 +77,25 @@ namespace VOB.Web.Controllers
 
             List<ObtenerBalancesPeriodosCliente_Result> resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
 
-            try
+            string codigosAnalistas = Utilidades.ConfigHelper.ObtenerString("ReportPerfilesAnalistas");
+
+            Models.ReporteNormalModel datos = new Models.ReporteNormalModel();
+            datos.Rut = rutCliente;
+            ObtieneDatosCliente(ref datos);
+
+            if (codigosAnalistas.Contains(Session["perfilEjecutivo"] != null ? Session["perfilEjecutivo"].ToString() : "0") || datos.EjecutivoRut == Session["rutEjecutivo"].ToString())
             {
-                using (var db = new VOB_Entitites())
+                try
                 {
-                    resultado = db.ObtenerBalancesPeriodosCliente(null, rutCliente, null, null, idEstado, null, null, tipoBalance, null).ToList();
+                    using (var db = new VOB_Entitites())
+                    {
+                        resultado = db.ObtenerBalancesPeriodosCliente(null, rutCliente, null, null, idEstado, null, null, tipoBalance, null).ToList();
+                    }
                 }
-            }
-            catch
-            {
-                resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
+                catch
+                {
+                    resultado = new List<ObtenerBalancesPeriodosCliente_Result>();
+                }
             }
 
             return new JsonResult() { Data = resultado, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
@@ -90,6 +123,7 @@ namespace VOB.Web.Controllers
                     string ns = "{" + ConfigHelper.ObtenerString("ReportWebServiceNamespace") + "}";
                     foreach (XElement xe in service.ResultXML.Descendants(ns + "ConsultaClienteResponse").Descendants(ns + "ConsultaClienteResult"))
                     {
+                        /* El cast directo a (string) resuelve la problematica de si el elemento es nulo o no existe */
                         string estado;
                         estado = (string)xe.Element(ns + "Estado");
 
@@ -108,7 +142,7 @@ namespace VOB.Web.Controllers
                                         foreach (XElement eje in per.Descendants(ns + "EjecutivoAsociado"))
                                         {
                                             model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
-                                            model.EjecutivoRut = (string)eje.Element(ns + "RutEjecutivo");
+                                            model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
                                             model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
                                         }
                                     }
@@ -118,12 +152,20 @@ namespace VOB.Web.Controllers
                                     foreach (XElement emp in info.Descendants(ns + "Empresa"))
                                     {
                                         model.ClienteNombre = (string)emp.Element(ns + "NombreFantasia");
+
+                                        foreach (XElement eje in emp.Descendants(ns + "EjecutivoAsociado"))
+                                        {
+                                            model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
+                                            model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
+                                            model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
+                                        }
                                     }
                                 }
                             }
                         }
                         else
                         {
+                            model.EjecutivoRut = "-1";
                             model.ClienteNombre = "Cliente No EXISTE";
                         }
                     }
@@ -136,6 +178,8 @@ namespace VOB.Web.Controllers
             else if (ConfigHelper.ObtenerBoleano("ReportWebServiceOn") == false)
             {
                 model.ClienteNombre = "Servicio apagado...";
+                model.EjecutivoNombre = "acceso sin restricciones.";
+                model.EjecutivoRut = Session["rutEjecutivo"].ToString();
             }
         }
 

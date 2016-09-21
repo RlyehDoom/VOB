@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -46,7 +47,7 @@ namespace VOB.Web.Controllers
                                     foreach (XElement eje in per.Descendants(ns + "EjecutivoAsociado"))
                                     {
                                         model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
-                                        model.EjecutivoRut = (string)eje.Element(ns + "RutEjecutivo");
+                                        model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
                                         model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
                                     }
                                 }
@@ -56,9 +57,18 @@ namespace VOB.Web.Controllers
                                 foreach (XElement emp in info.Descendants(ns + "Empresa"))
                                 {
                                     model.ClienteNombre = (string)emp.Element(ns + "NombreFantasia");
+
+                                    foreach (XElement eje in emp.Descendants(ns + "EjecutivoAsociado"))
+                                    {
+                                        model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
+                                        model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
+                                        model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
+                                    }
                                 }
                             }
                         }
+
+                        model.EjecutivoNombre = JsonConvert.SerializeObject(model);
                     }
                     else
                     {

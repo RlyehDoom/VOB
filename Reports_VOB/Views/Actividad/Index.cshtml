@@ -33,7 +33,11 @@
     </div>
     <br />
     <div class="form-group">
-        <label for="inputEmail">Resultado:</label>
+        <label for="inputEmail">Resultado Nombre:</label>
         @Html.TextBoxFor(m => m.ClienteNombre, new { @class = "form-control" , @style="width:100%;" })
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Resultado Modelo:</label>
+        @Html.TextBoxFor(m => m.EjecutivoNombre, new { @class = "form-control", @style = "width:100%;" })
     </div>
 }
