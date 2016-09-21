@@ -15,7 +15,7 @@
                     $('#btnBuscarCliente').addClass('disabled');
                 },
                 on_success: function () {
-                    $('.alert').hide();
+                    $('.alert-warning').hide();
                     $('#btnBuscarCliente').prop("disabled", false);
                     $('#btnBuscarCliente').removeClass('disabled');
                 },
@@ -118,12 +118,17 @@
         function ObtenerClientData() {
             $.getJSON('@Url.Action("ObtieneDatosRutCliente", "Home")', { rutCliente: $('#Rut').val() }, function (data) {
                 if (data) {
-                    console.log('Respuesta/ObtieneDatosRutCliente: ' + JSON.stringify(data));
+                    //console.log('Respuesta/ObtieneDatosRutCliente: ' + JSON.stringify(data));
+
                     if (data.ClientName != "") {
                         $('#clientDataName').text(data.ClienteNombre);
                         $('#clientExecutive').text(data.EjecutivoNombre);
                         $('.form-horizontal').show();
                     }
+                    if (data.TieneAcceso == false)
+                        $('#alertaAcceso').show();
+                    else
+                        $('.alert-danger').hide();
                 }
             });
         }
@@ -145,8 +150,12 @@
 }
 
 <div id="alertaRUT" class="alert alert-warning" style="display:none;">
-    <a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
+    <a href="#" class="close" onclick="$('.alert-warning').hide()">&times;</a>
     <strong>Advertencia!</strong> Por favor ingrese un RUT valido.
+</div>
+<div id="alertaAcceso" class="alert alert-danger" style="display:none;">
+    <a href="#" class="close" onclick="$('.alert-danger').hide()">&times;</a>
+    <strong>Atención!</strong> Ud. no posee acceso para consultar este cliente.
 </div>
 <br />
 @using (Html.BeginForm(null, null, new { }, FormMethod.Post, new { @id="defaultForm" }))

@@ -22,6 +22,11 @@ namespace VOB.Web.Controllers
                 Session["rutEjecutivo"] = rutEjecutivo;
                 Session["perfilEjecutivo"] = perfilEjecutivo;
             }
+            else
+            {
+                Session["rutEjecutivo"] = "-1";
+                Session["perfilEjecutivo"] = "-1";
+            }
 
             model.IdTipoBalance = 1;
             model.TituloBalance = "Individual";

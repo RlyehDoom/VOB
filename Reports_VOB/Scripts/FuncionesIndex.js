@@ -26,7 +26,7 @@ function selectRow() {
             $('#btnGeneraReporte').removeClass('disabled');
 
             rowDataList.push(dataItem);
-            console.log(JSON.stringify(rowDataList));
+            //console.log(JSON.stringify(rowDataList));
         }
         else {
             this.checked = false;
@@ -54,7 +54,7 @@ function selectRow() {
         var index = arrayObjectIndexOf(rowDataList, dataItem.id, 'id');
         if (index > -1) {
             rowDataList.splice(index, 1);
-            console.log(JSON.stringify(rowDataList));
+            //console.log(JSON.stringify(rowDataList));
         }
     }
 
