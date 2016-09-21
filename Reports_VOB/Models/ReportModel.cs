@@ -48,5 +48,7 @@ namespace VOB.Web.Models
         public string EjecutivoNombre { get; set; }
         public string EjecutivoRut { get; set; }
         public int EjecutivoCodigoPerfil { get; set; }
+
+        public bool TieneAcceso { get; set; }
     }
 }

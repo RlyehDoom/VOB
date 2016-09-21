@@ -106,7 +106,13 @@ namespace VOB.Web.Controllers
             Models.ReporteNormalModel datos = new Models.ReporteNormalModel();
             datos.Rut = rutCliente;
             ObtieneDatosCliente(ref datos);
-            
+
+            string codigosAnalistas = Utilidades.ConfigHelper.ObtenerString("ReportPerfilesAnalistas");
+            if (codigosAnalistas.Contains(Session["perfilEjecutivo"] != null ? Session["perfilEjecutivo"].ToString() : "0") || datos.EjecutivoRut == Session["rutEjecutivo"].ToString())
+                datos.TieneAcceso = true;
+            else
+                datos.TieneAcceso = false;
+
             return new JsonResult() { Data = datos, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
