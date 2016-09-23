@@ -42,12 +42,16 @@ namespace VOB.Web.Controllers
                             {
                                 foreach (XElement per in info.Descendants(ns + "Persona"))
                                 {
-                                    model.ClienteNombre = (string)per.Element(ns + "NombreEmpresa");
+                                    string nombre, apePaterno, apeMaterno;
+                                    nombre = (string)per.Element(ns + "NombreCliente");
+                                    apePaterno = (string)per.Element(ns + "ApellidoPaterno");
+                                    apeMaterno = (string)per.Element(ns + "ApellidoMaterno");
+                                    model.ClienteNombre = string.Concat(nombre, " ",apePaterno, " ", apeMaterno);
 
                                     foreach (XElement eje in per.Descendants(ns + "EjecutivoAsociado"))
                                     {
-                                        model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
-                                        model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
+                                        model.EjecutivoId = !string.IsNullOrEmpty((string)eje.Element(ns + "IdEjecutivo")) ? (int)eje.Element(ns + "IdEjecutivo") : 0;
+                                        model.EjecutivoRut = !string.IsNullOrEmpty((string)eje.Element(ns + "RutEjecutivo")) ? ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0') : "";
                                         model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
                                     }
                                 }
@@ -56,12 +60,12 @@ namespace VOB.Web.Controllers
                             {
                                 foreach (XElement emp in info.Descendants(ns + "Empresa"))
                                 {
-                                    model.ClienteNombre = (string)emp.Element(ns + "NombreFantasia");
+                                    model.ClienteNombre = (string)emp.Element(ns + "NombreCliente");
 
                                     foreach (XElement eje in emp.Descendants(ns + "EjecutivoAsociado"))
                                     {
-                                        model.EjecutivoId = ((string)eje.Element(ns + "IdEjecutivo")) != null ? (int)eje.Element(ns + "") : 0;
-                                        model.EjecutivoRut = ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0');
+                                        model.EjecutivoId = !string.IsNullOrEmpty((string)eje.Element(ns + "IdEjecutivo")) ? (int)eje.Element(ns + "IdEjecutivo") : 0;
+                                        model.EjecutivoRut = !string.IsNullOrEmpty((string)eje.Element(ns + "RutEjecutivo")) ? ((string)eje.Element(ns + "RutEjecutivo")).TrimStart('0') : "";
                                         model.EjecutivoNombre = (string)eje.Element(ns + "NombreEjecutivo");
                                     }
                                 }

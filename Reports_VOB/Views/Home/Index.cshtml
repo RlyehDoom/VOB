@@ -108,7 +108,6 @@
             if ($('#Rut').val() != "") {
                 $('#contenedorSelPer').show("slow", function () {
                     ObtenerClientData();
-                    CargarPeriodos();
                 });
             }
             else {
@@ -120,15 +119,17 @@
                 if (data) {
                     //console.log('Respuesta/ObtieneDatosRutCliente: ' + JSON.stringify(data));
 
-                    if (data.ClientName != "") {
+                    if (data.ClienteNombre != "") {
                         $('#clientDataName').text(data.ClienteNombre);
                         $('#clientExecutive').text(data.EjecutivoNombre);
                         $('.form-horizontal').show();
                     }
                     if (data.TieneAcceso == false)
                         $('#alertaAcceso').show();
-                    else
+                    else {
                         $('.alert-danger').hide();
+                        CargarPeriodos();
+                    }
                 }
             });
         }

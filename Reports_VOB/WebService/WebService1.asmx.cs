@@ -59,6 +59,7 @@ namespace VOB.Web.WebService
         public Per(string nombreEmpresa)
         {
             this.NombreEmpresa = nombreEmpresa;
+            this.EjecutivoAsociado = new Eje(1, "0000151524230", "José Luis Y.R");
         }
         public string NombreEmpresa { get; set; }
 
@@ -70,7 +71,9 @@ namespace VOB.Web.WebService
         public Eje() { }
         public Eje(int id, string rut, string nombre)
         {
-
+            this.IdEjecutivo = id;
+            this.RutEjecutivo = rut;
+            this.NombreEjecutivo = nombre;
         }
         public int IdEjecutivo { get; set; }
         public string RutEjecutivo { get; set; }
