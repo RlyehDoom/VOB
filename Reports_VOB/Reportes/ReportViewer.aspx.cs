@@ -49,8 +49,7 @@ namespace VOB.Web.Reportes
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
-            DisableUnwantedExportFormat(rptViewer, "Excel"); 
-            DisableUnwantedExportFormat(rptViewer, "EXCELOPENXML");
+            DisableAllUnwantedExportFormatExcept(rptViewer, "PDF");
         }
 
         private void RenderReport()
@@ -103,6 +102,19 @@ namespace VOB.Web.Reportes
                     info = extension.GetType().GetField("m_isVisible", BindingFlags.Instance | BindingFlags.NonPublic);
                     info.SetValue(extension, false);
                 }
+            }
+        }
+        private void DisableAllUnwantedExportFormatExcept(Microsoft.Reporting.WebForms.ReportViewer ReportViewerID, string strFormatName)
+        {
+            FieldInfo info;
+
+            foreach (RenderingExtension extension in ReportViewerID.ServerReport.ListRenderingExtensions())
+            {
+                info = extension.GetType().GetField("m_isVisible", BindingFlags.Instance | BindingFlags.NonPublic);
+                if (extension.Name.ToUpper() == strFormatName.ToUpper())
+                    info.SetValue(extension, true);
+                else
+                    info.SetValue(extension, false);
             }
         }
     }

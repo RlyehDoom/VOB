@@ -14,8 +14,19 @@ namespace VOB.Web.Controllers
         public ActionResult Index(Models.ReporteNormalModel model)
         {
             Session.Clear();
-            string rutEjecutivo = Request.QueryString["id"];
-            string perfilEjecutivo = Request.QueryString["perf"];
+            string rutEjecutivo;
+            string perfilEjecutivo;
+
+            if (Request.Form["id"] != null)
+            {
+                rutEjecutivo = Request.Form["id"];
+                perfilEjecutivo = Request.Form["per"];
+            }
+            else
+            {
+                rutEjecutivo = Request.QueryString["id"];
+                perfilEjecutivo = Request.QueryString["perf"];
+            }
 
             if (rutEjecutivo != null && rutEjecutivo != string.Empty)
             {
