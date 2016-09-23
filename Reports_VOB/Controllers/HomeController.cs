@@ -14,11 +14,16 @@ namespace VOB.Web.Controllers
         public ActionResult Index(Models.ReporteNormalModel model)
         {
             Session.Clear();
+            bool isQueryString = false;
             string rutEjecutivo;
             string perfilEjecutivo;
 
+            if (Request.QueryString["id"] != null)
+                isQueryString = true;
+
             if (Request.Form["id"] != null)
             {
+                isQueryString = false;
                 rutEjecutivo = Request.Form["id"];
                 perfilEjecutivo = Request.Form["per"];
             }
@@ -46,7 +51,12 @@ namespace VOB.Web.Controllers
 
             //ObtieneDatosCliente(ref model);
 
-            return View("Index", model);
+            //Response.Redirect("~/Home/Individual");
+
+            if (!isQueryString)
+                return View("Index", model);
+            else
+                return Redirect("~/Home/Individual");
         }
 
         public ActionResult Individual(Models.ReporteNormalModel model)
