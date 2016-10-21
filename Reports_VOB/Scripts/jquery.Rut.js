@@ -29,7 +29,7 @@
       {
         if(defaults.digito_verificador == null)
         {
-          jQuery(this).bind('blur', function(){
+            jQuery(this).bind('keyup', function () {
             var rut = jQuery(this).val();
             if(jQuery(this).val() != "" && !jQuery.Rut.validar(rut))
             {
@@ -44,7 +44,7 @@
         else
         {
           var id = jQuery(this).attr("id");
-          jQuery(defaults.digito_verificador).bind('blur', function(){
+          jQuery(defaults.digito_verificador).bind('keyup', function () {
             var rut = jQuery("#"+id).val()+"-"+jQuery(this).val();
             if(jQuery(this).val() != "" && !jQuery.Rut.validar(rut))
             {
