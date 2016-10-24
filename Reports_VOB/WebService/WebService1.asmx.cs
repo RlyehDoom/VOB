@@ -32,7 +32,7 @@ namespace VOB.Web.WebService
         {
             this.Estado = estado;
             InfoClient infoC = new InfoClient(tipoPersona);
-            infoC.Persona = new Per("Empresa servicio dummy");
+            infoC.Persona = new Per("MADECO S.A");
 
             this.InformacionCliente = infoC;
         }
