@@ -58,6 +58,30 @@ function selectRow() {
         }
     }
 
+    var ordered = {};
+
+    var asc = true;
+    var prop = 'Periodo';
+
+    rowDataList = rowDataList.sort(function (a, b) {
+        if (asc) {
+            return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+        } else {
+            return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+        }
+    });
+
+    $('#Periodo1').val('');
+    $('#Periodo2').val('');
+    $('#Periodo3').val('');
+    $('#Periodo4').val('');
+    $('#IdPeriodo1').val('');
+    $('#IdPeriodo2').val('');
+    $('#IdPeriodo3').val('');
+    $('#IdPeriodo4').val('');
+
+    console.log(JSON.stringify(rowDataList));
+
     $.each(rowDataList, function (index, item) {
         switch (index) {
             case 0:

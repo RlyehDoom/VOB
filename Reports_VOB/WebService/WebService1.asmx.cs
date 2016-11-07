@@ -59,9 +59,9 @@ namespace VOB.Web.WebService
         public Per(string nombreEmpresa)
         {
             this.NombreCliente = nombreEmpresa;
-            this.ApellidoMaterno = "Rojas";
-            this.ApellidoPaterno = "Yañez";
-            this.EjecutivoAsociado = new Eje(1, "0000151524230", "José Luis Y.R");
+            this.ApellidoMaterno = ".";
+            this.ApellidoPaterno = "";
+            this.EjecutivoAsociado = new Eje(1, "0000151524230", "Paz Ahumada");
         }
         public string NombreCliente { get; set; }
         public string ApellidoPaterno { get; set; }
