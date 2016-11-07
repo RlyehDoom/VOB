@@ -80,7 +80,7 @@ function selectRow() {
     $('#IdPeriodo3').val('');
     $('#IdPeriodo4').val('');
 
-    console.log(JSON.stringify(rowDataList));
+    //console.log(JSON.stringify(rowDataList));
 
     $.each(rowDataList, function (index, item) {
         switch (index) {
