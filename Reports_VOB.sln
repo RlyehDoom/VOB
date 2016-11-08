@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VOB.Web", "Reports_VOB\VOB.Web.csproj", "{BE88D225-B032-45BD-A009-587492E17206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentacion", "Documentacion", "{AAB845E1-FD01-4896-B049-07BA9016D8B1}"
+	ProjectSection(SolutionItems) = preProject
+		Documentacion\Iconexa - Manual de uso - Planilla Excel & Reportes.docx = Documentacion\Iconexa - Manual de uso - Planilla Excel & Reportes.docx
+		Documentacion\Iconexa - Manual Instalación VOB.docx = Documentacion\Iconexa - Manual Instalación VOB.docx
+		Documentacion\Iconexa - Manual Técnico.docx = Documentacion\Iconexa - Manual Técnico.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
