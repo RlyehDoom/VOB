@@ -12,6 +12,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentacion", "Documentac
 		Documentacion\Iconexa - Manual Técnico.docx = Documentacion\Iconexa - Manual Técnico.docx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseDatos", "BaseDatos", "{9BDD9225-5FDA-41D0-A0A9-C3F67CEF44FC}"
+	ProjectSection(SolutionItems) = preProject
+		BaseDatos\VOB_Scripts.sql = BaseDatos\VOB_Scripts.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reportes", "Reportes", "{C2A09BAB-79AE-4DB2-A22C-DE3A1E8434B8}"
+	ProjectSection(SolutionItems) = preProject
+		Reportes\Balances Individual-Consolidado.rdl = Reportes\Balances Individual-Consolidado.rdl
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
