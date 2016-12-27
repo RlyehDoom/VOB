@@ -22,6 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reportes", "Reportes", "{C2
 		Reportes\Balances Individual-Consolidado.rdl = Reportes\Balances Individual-Consolidado.rdl
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Planilla Excel", "Planilla Excel", "{811A8775-AC1A-4943-A291-3AA1654A78B3}"
+	ProjectSection(SolutionItems) = preProject
+		Planilla Excel\Balances - Dev.xlsm = Planilla Excel\Balances - Dev.xlsm
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
