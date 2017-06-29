@@ -1920,7 +1920,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(InStr(Fields!Concepto.Value,"//")=0,IIF(Fields!Comentario4.Value &lt;&gt; "","(c" &amp; Fields!IDConcepto.Value &amp; ")" , ""),"//")</Value>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value, "//") = 0, IIF(Fields!Comentario4.Value &lt;&gt; "", "(D" &amp; Fields!IDConcepto.Value &amp; ")", ""), "//")</Value>
                                   <Style>
                                     <FontSize>5pt</FontSize>
                                     <FontWeight>=IIF(InStr(Fields!ConceptoFormato.Value, "N") &gt;0, "Bold", "Default")</FontWeight>
@@ -3152,6 +3152,7 @@
                             <PaddingBottom>1pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -4527,7 +4528,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Microsoft.VisualBasic.Interaction.IIF(Microsoft.VisualBasic.Strings.InStr(Fields!Concepto.Value, "//") = 0, Microsoft.VisualBasic.Interaction.IIF(Fields!Comentario4.Value &lt;&gt; "", "(c" &amp; Fields!IDConcepto.Value &amp; ")", ""), "//")</Value>
+                                  <Value>=IIF(InStr(Fields!Concepto.Value, "//") = 0, IIF(Fields!Comentario4.Value &lt;&gt; "", "(D" &amp; Fields!IDConcepto.Value &amp; ")", ""), "//")</Value>
                                   <Style>
                                     <FontSize>5pt</FontSize>
                                     <FontWeight>=IIF(InStr(Fields!ConceptoFormato.Value, "N") &gt;0, "Bold", "Default")</FontWeight>
